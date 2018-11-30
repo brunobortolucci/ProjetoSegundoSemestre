@@ -71,5 +71,10 @@ namespace gymtech
             ToolTip t1 = new ToolTip();
             t1.Show("Mostar Senha", btnMostrarSenha);
         }
+
+        private void lblEsqueciSenha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBox.Show("Por favor, contate a recepção!");
+        }
     }
 }
