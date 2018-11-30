@@ -121,6 +121,7 @@
             this.Controls.Add(this.lblUser);
             this.Controls.Add(this.txbPassword);
             this.Controls.Add(this.txbUser);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GYM TECH";
