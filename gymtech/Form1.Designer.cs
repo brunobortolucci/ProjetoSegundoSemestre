@@ -48,6 +48,7 @@
             this.lblEsqueciSenha.TabIndex = 11;
             this.lblEsqueciSenha.TabStop = true;
             this.lblEsqueciSenha.Text = "Esqueci minha senha";
+            this.lblEsqueciSenha.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblEsqueciSenha_LinkClicked);
             // 
             // btnLogin
             // 
