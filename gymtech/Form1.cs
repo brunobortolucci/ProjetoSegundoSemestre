@@ -16,6 +16,7 @@ namespace gymtech
     {
         Conexao conexao = new Conexao();
         Autenticacao aut = new Autenticacao();
+        frmRecepcao frmrec = new frmRecepcao();
         
 
         public frmLogin()
@@ -41,7 +42,8 @@ namespace gymtech
             if (dr.Read())
             {
                 encontrou = true;
-                MessageBox.Show("Logado");
+                this.Hide();
+                frmrec.Show();
             }
 
             else if(encontrou == false)
