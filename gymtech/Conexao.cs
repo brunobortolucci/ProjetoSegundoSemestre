@@ -14,7 +14,7 @@ namespace gymtech
 
         public void conectar()
         {
-            conn.ConnectionString = @"Host=127.0.0.1;Username=postgres;Password=Palmeiras1914!;Database=academia";
+            conn.ConnectionString = @"Host=127.0.0.1;Username=postgres;Password=1914;Database=academia";
 
             conn.Open();
         }
