@@ -61,6 +61,8 @@ namespace gymtech
                 {
                     ler_teste.Close();
                 }
+
+                //aluno
                 
                 NpgsqlCommand user_aluno = new NpgsqlCommand(permissaoaluno, conexao.conn);
                 NpgsqlDataReader ler_aluno = user_aluno.ExecuteReader();
@@ -75,6 +77,8 @@ namespace gymtech
                 {
                     ler_aluno.Close();
                 }
+
+                //professor
                 
                 NpgsqlCommand user_professor = new NpgsqlCommand(permissaoprofessor, conexao.conn);
                 NpgsqlDataReader ler_professor = user_professor.ExecuteReader();
@@ -89,6 +93,8 @@ namespace gymtech
                 {
                     ler_professor.Close();
                 }
+
+                //recepcao
                 
                 NpgsqlCommand user_recepcao = new NpgsqlCommand(permissaorecepcao, conexao.conn);
                 NpgsqlDataReader ler_recepcao = user_recepcao.ExecuteReader();
@@ -97,6 +103,8 @@ namespace gymtech
                 {
                     MessageBox.Show("Funcionou - Recepção");
                     ler_recepcao.Close();
+                    this.Hide();
+                    frmrec.Show();
                 }
 
                 else
