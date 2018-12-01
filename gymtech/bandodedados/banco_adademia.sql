@@ -21,32 +21,45 @@ insert into usuarios (login, senha, permissao) values ('recepcao', 'recepcao', '
 
 -- criando as tabelas
 
+create table administrador(
+	id_admin serial primary key,
+	nome varchar(150) not null,
+	id_user int,
+	constraint id_user foreign key(id_user)
+	references usuarios(id_user) match simple
+);
+
+insert into administrador(nome, id_user) values('Administrador', '1');
 
 create table recepcao(
 	id_recepcao serial primary key,
 	nome varchar(150) not null,
-	cpf varchar(11) not null,
+	cpf varchar(11) unique not null,
 	data_nasc date,
 	id_user int,
 	constraint id_user foreign key(id_user)
 	references usuarios(id_user) match simple
 );
+
+insert into recepcao(nome, cpf, data_nasc, id_user) values('Recepção', '42014050090', '01/01/1990', '4');
 
 create table professor(
 	id_professor serial primary key,
 	nome varchar(150) not null,
-	cpf varchar(11) not null,
+	cpf varchar(11) unique not null,
 	data_nasc date,
 	id_user int,
 	constraint id_user foreign key(id_user)
 	references usuarios(id_user) match simple
 );
 
+insert into professor(nome, cpf, data_nasc, id_user) values('Professor', '42014450090', '01/01/1990', '3');
+
 create table aluno(
 	id_aluno serial primary key,
 	nome varchar(150) not null,
-	cpf varchar(11) not null,
-	rg varchar(9) not null,
+	cpf varchar(11) unique not null,
+	rg varchar(9) unique not null,
 	endereco_rua varchar(150) not null,
 	endereco_num varchar(10) not null,
 	endereco_comp varchar(15),
@@ -61,6 +74,9 @@ create table aluno(
 	constraint id_user foreign key(id_user)
 	references usuarios(id_user) match simple
 );
+
+insert into aluno(nome, cpf, rg, endereco_rua, endereco_num, endereco_comp, cep, bairro, data_nasc, celular, cad_recep, id_user)
+values ('Aluno', '42010050809', '483002220', 'Avenida Sao Jose dos Campos', '3175', '', '13040735', 'Pq Sao Martinho', '01/02/1992', '19995054631', '1', '2');
 
 create table treino_perna(
 	id_perna serial primary key,
@@ -143,3 +159,8 @@ create table ficha_treino(
 	constraint t_triceps foreign key(t_triceps)
 	references treino_triceps(id_triceps) match simple
 );
+
+select * from aluno;
+select * from recepcao;
+select * from professor;
+select * from usuarios;
