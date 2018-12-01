@@ -12,9 +12,16 @@ namespace gymtech
 {
     public partial class frmRecepcao : Form
     {
+        frmLogin frmlog = new frmLogin();
+
         public frmRecepcao()
         {
             InitializeComponent();
+        }
+
+        private void frmRecepcao_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
