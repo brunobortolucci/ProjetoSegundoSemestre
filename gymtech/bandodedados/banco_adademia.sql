@@ -2,16 +2,22 @@ DROP SCHEMA public CASCADE;
 
 CREATE SCHEMA public;
 
--- tabela e dados administrador do sistema
 
-create table admin(
-	nome varchar(50) not null,
-	login varchar(50) not null,
-	senha varchar(50) not null
+-- criando tabelas de usuarios, para acesso ao sistema
+
+create table usuarios(
+	id_user serial primary key,
+	login varchar(50) unique not null,
+	senha varchar(50) not null,
+	permissao int not null
 );
 
-insert into admin(nome, login, senha) values ('Administrador', 'admin', 'admin');
+-- inserindo usuarios para teste de permissao
 
+insert into usuarios (login, senha, permissao) values ('gymtech', 'gymtech', '0');
+insert into usuarios (login, senha, permissao) values ('aluno', 'aluno', '1');
+insert into usuarios (login, senha, permissao) values ('professor', 'professor', '2');
+insert into usuarios (login, senha, permissao) values ('recepcao', 'recepcao', '3');
 
 -- criando as tabelas
 
@@ -19,15 +25,21 @@ insert into admin(nome, login, senha) values ('Administrador', 'admin', 'admin')
 create table recepcao(
 	id_recepcao serial primary key,
 	nome varchar(150) not null,
-	r_login varchar(50) not null,
-	r_senha varchar(50) not null
+	cpf varchar(11) not null,
+	data_nasc date,
+	id_user int,
+	constraint id_user foreign key(id_user)
+	references usuarios(id_user) match simple
 );
 
 create table professor(
 	id_professor serial primary key,
 	nome varchar(150) not null,
-	p_login varchar(50) not null,
-	p_senha varchar(50) not null
+	cpf varchar(11) not null,
+	data_nasc date,
+	id_user int,
+	constraint id_user foreign key(id_user)
+	references usuarios(id_user) match simple
 );
 
 create table aluno(
@@ -40,13 +52,14 @@ create table aluno(
 	endereco_comp varchar(15),
 	cep varchar(15) not null,
 	bairro varchar(50) not null,
-	data_nasc timestamp without time zone,
+	data_nasc date,
 	celular varchar(15),
 	cad_recep int,
 	constraint cad_recep foreign key(cad_recep)
 	references recepcao(id_recepcao) match simple,
-	a_login varchar(50) not null,
-	a_senha varchar(50) not null
+	id_user int,
+	constraint id_user foreign key(id_user)
+	references usuarios(id_user) match simple
 );
 
 create table treino_perna(
