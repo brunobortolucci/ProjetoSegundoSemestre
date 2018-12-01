@@ -164,3 +164,6 @@ select * from aluno;
 select * from recepcao;
 select * from professor;
 select * from usuarios;
+
+select id_user from usuarios where login = 'recepcao';
+select nome from recepcao where id_user = '4';
