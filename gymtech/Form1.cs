@@ -32,17 +32,78 @@ namespace gymtech
         {
             bool encontrou = false;
 
-            string slcLogin = "SELECT * FROM admin WHERE login = '" + txbUser.Text + "' and senha = '" + txbPassword.Text + "'";
+            //string de buscar login
+            string slcLogin = "SELECT * FROM usuarios WHERE login = '" + txbUser.Text + "' and senha = '" + txbPassword.Text + "'";
 
             NpgsqlCommand cmd = new NpgsqlCommand(slcLogin, conexao.conn);
                         
-            NpgsqlDataReader dr = cmd.ExecuteReader();            
+            NpgsqlDataReader dr = cmd.ExecuteReader();
 
             if (dr.Read())
             {
                 encontrou = true;
-                this.Hide();
-                frmrec.Show();
+                dr.Close();
+
+                string permissao = "SELECT * FROM usuarios WHERE login = '" + txbUser.Text + "' and senha = '" + txbPassword.Text + "' and permissao = 0";
+                string permissaoaluno = "SELECT * FROM usuarios WHERE login = '" + txbUser.Text + "' and senha = '" + txbPassword.Text + "' and permissao = 1";
+                string permissaoprofessor = "SELECT * FROM usuarios WHERE login = '" + txbUser.Text + "' and senha = '" + txbPassword.Text + "' and permissao = 2";
+                string permissaorecepcao = "SELECT * FROM usuarios WHERE login = '" + txbUser.Text + "' and senha = '" + txbPassword.Text + "' and permissao = 3";
+                NpgsqlCommand user_teste = new NpgsqlCommand(permissao, conexao.conn);
+                NpgsqlDataReader ler_teste = user_teste.ExecuteReader();
+
+                if (ler_teste.Read())
+                {
+                    MessageBox.Show("Funcionou - Teste");
+                    ler_teste.Close();
+                }
+
+                else
+                {
+                    ler_teste.Close();
+                }
+                
+                NpgsqlCommand user_aluno = new NpgsqlCommand(permissaoaluno, conexao.conn);
+                NpgsqlDataReader ler_aluno = user_aluno.ExecuteReader();
+
+                if (ler_aluno.Read())
+                {
+                    MessageBox.Show("Funcionou - Aluno");
+                    ler_aluno.Close();
+                }
+
+                else
+                {
+                    ler_aluno.Close();
+                }
+                
+                NpgsqlCommand user_professor = new NpgsqlCommand(permissaoprofessor, conexao.conn);
+                NpgsqlDataReader ler_professor = user_professor.ExecuteReader();
+
+                if (ler_professor.Read())
+                {
+                    MessageBox.Show("Funcionou - Professor");
+                    ler_professor.Close();
+                }
+
+                else
+                {
+                    ler_professor.Close();
+                }
+                
+                NpgsqlCommand user_recepcao = new NpgsqlCommand(permissaorecepcao, conexao.conn);
+                NpgsqlDataReader ler_recepcao = user_recepcao.ExecuteReader();
+
+                if (ler_recepcao.Read())
+                {
+                    MessageBox.Show("Funcionou - Recepção");
+                    ler_recepcao.Close();
+                }
+
+                else
+                {
+                    ler_recepcao.Close();
+                }
+
             }
 
             else if(encontrou == false)
@@ -51,11 +112,16 @@ namespace gymtech
                 conexao.desconectar();
                 conexao.conectar();
             }
+        }        
+
+        private void lblEsqueciSenha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBox.Show("Por favor, contate a recepção!");
         }
 
-        private void btnMostrarSenha_Click(object sender, EventArgs e)
+        private void checkSenha_CheckedChanged(object sender, EventArgs e)
         {
-            if(txbPassword.UseSystemPasswordChar == true)
+            if(checkSenha.Checked == true)
             {
                 txbPassword.UseSystemPasswordChar = false;
             }
@@ -64,18 +130,7 @@ namespace gymtech
             {
                 txbPassword.UseSystemPasswordChar = true;
             }
-        
-        }
 
-        private void btnMostrarSenha_MouseHover(object sender, EventArgs e)
-        {
-            ToolTip t1 = new ToolTip();
-            t1.Show("Mostar Senha", btnMostrarSenha);
-        }
-
-        private void lblEsqueciSenha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            MessageBox.Show("Por favor, contate a recepção!");
         }
     }
 }
