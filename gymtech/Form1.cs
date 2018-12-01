@@ -103,6 +103,12 @@ namespace gymtech
                 {
                     MessageBox.Show("Funcionou - Recepção");
                     ler_recepcao.Close();
+                    
+                    //pegando id, para identificar usuario logado
+                    NpgsqlCommand pegar_id = new NpgsqlCommand("SELECT id_user FROM usuarios WHERE login = '" + txbUser.Text + "'", conexao.conn);
+                    string id = Convert.ToString(pegar_id.ExecuteScalar());
+                    
+
                     this.Hide();
                     frmrec.Show();
                 }
