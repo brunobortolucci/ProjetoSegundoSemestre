@@ -36,13 +36,15 @@
             this.txbPassword = new System.Windows.Forms.TextBox();
             this.txbUser = new System.Windows.Forms.TextBox();
             this.btnMostrarSenha = new System.Windows.Forms.Button();
+            this.pnLogin = new System.Windows.Forms.Panel();
+            this.pnLogin.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblEsqueciSenha
             // 
             this.lblEsqueciSenha.AutoSize = true;
             this.lblEsqueciSenha.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEsqueciSenha.Location = new System.Drawing.Point(9, 112);
+            this.lblEsqueciSenha.Location = new System.Drawing.Point(107, 283);
             this.lblEsqueciSenha.Name = "lblEsqueciSenha";
             this.lblEsqueciSenha.Size = new System.Drawing.Size(140, 15);
             this.lblEsqueciSenha.TabIndex = 11;
@@ -53,9 +55,9 @@
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(220, 104);
+            this.btnLogin.Location = new System.Drawing.Point(42, 227);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnLogin.Size = new System.Drawing.Size(263, 41);
             this.btnLogin.TabIndex = 10;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -65,7 +67,7 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(52, 61);
+            this.lblPassword.Location = new System.Drawing.Point(38, 134);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(82, 24);
             this.lblPassword.TabIndex = 9;
@@ -75,25 +77,27 @@
             // 
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.Location = new System.Drawing.Point(28, 26);
+            this.lblUser.Location = new System.Drawing.Point(38, 72);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(106, 24);
+            this.lblUser.Size = new System.Drawing.Size(94, 24);
             this.lblUser.TabIndex = 8;
-            this.lblUser.Text = "Usuário:";
+            this.lblUser.Text = "Usuário";
             // 
             // txbPassword
             // 
-            this.txbPassword.Location = new System.Drawing.Point(140, 66);
+            this.txbPassword.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbPassword.Location = new System.Drawing.Point(42, 170);
             this.txbPassword.Name = "txbPassword";
-            this.txbPassword.Size = new System.Drawing.Size(155, 20);
+            this.txbPassword.Size = new System.Drawing.Size(263, 32);
             this.txbPassword.TabIndex = 7;
             this.txbPassword.UseSystemPasswordChar = true;
             // 
             // txbUser
             // 
-            this.txbUser.Location = new System.Drawing.Point(140, 30);
+            this.txbUser.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbUser.Location = new System.Drawing.Point(42, 99);
             this.txbUser.Name = "txbUser";
-            this.txbUser.Size = new System.Drawing.Size(155, 20);
+            this.txbUser.Size = new System.Drawing.Size(263, 32);
             this.txbUser.TabIndex = 6;
             // 
             // btnMostrarSenha
@@ -101,33 +105,43 @@
             this.btnMostrarSenha.BackColor = System.Drawing.Color.White;
             this.btnMostrarSenha.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMostrarSenha.BackgroundImage")));
             this.btnMostrarSenha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnMostrarSenha.Location = new System.Drawing.Point(302, 66);
+            this.btnMostrarSenha.Location = new System.Drawing.Point(311, 171);
             this.btnMostrarSenha.Name = "btnMostrarSenha";
-            this.btnMostrarSenha.Size = new System.Drawing.Size(21, 20);
+            this.btnMostrarSenha.Size = new System.Drawing.Size(31, 28);
             this.btnMostrarSenha.TabIndex = 12;
             this.btnMostrarSenha.UseVisualStyleBackColor = false;
             this.btnMostrarSenha.Click += new System.EventHandler(this.btnMostrarSenha_Click);
             this.btnMostrarSenha.MouseHover += new System.EventHandler(this.btnMostrarSenha_MouseHover);
             // 
+            // pnLogin
+            // 
+            this.pnLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnLogin.Controls.Add(this.btnMostrarSenha);
+            this.pnLogin.Controls.Add(this.txbPassword);
+            this.pnLogin.Controls.Add(this.btnLogin);
+            this.pnLogin.Controls.Add(this.txbUser);
+            this.pnLogin.Controls.Add(this.lblUser);
+            this.pnLogin.Controls.Add(this.lblEsqueciSenha);
+            this.pnLogin.Controls.Add(this.lblPassword);
+            this.pnLogin.Location = new System.Drawing.Point(407, 236);
+            this.pnLogin.Name = "pnLogin";
+            this.pnLogin.Size = new System.Drawing.Size(365, 313);
+            this.pnLogin.TabIndex = 13;
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(335, 150);
-            this.Controls.Add(this.btnMostrarSenha);
-            this.Controls.Add(this.lblEsqueciSenha);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.lblPassword);
-            this.Controls.Add(this.lblUser);
-            this.Controls.Add(this.txbPassword);
-            this.Controls.Add(this.txbUser);
+            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.pnLogin);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GYM TECH";
             this.Load += new System.EventHandler(this.frmLogin_Load);
+            this.pnLogin.ResumeLayout(false);
+            this.pnLogin.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -140,6 +154,7 @@
         private System.Windows.Forms.TextBox txbPassword;
         private System.Windows.Forms.TextBox txbUser;
         private System.Windows.Forms.Button btnMostrarSenha;
+        private System.Windows.Forms.Panel pnLogin;
     }
 }
 
