@@ -15,7 +15,6 @@ namespace gymtech
     public partial class frmLogin : Form
     {
         Conexao conexao = new Conexao();
-        Autenticacao aut = new Autenticacao();
         frmRecepcao frmrec = new frmRecepcao();
         
 
@@ -26,7 +25,7 @@ namespace gymtech
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            conexao.conectar();
+            conexao.conectar();          
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
