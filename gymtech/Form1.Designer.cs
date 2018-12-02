@@ -37,9 +37,9 @@
             this.txbUser = new System.Windows.Forms.TextBox();
             this.pnNoticias = new System.Windows.Forms.Panel();
             this.pnImagens = new System.Windows.Forms.Panel();
+            this.picNoticias = new System.Windows.Forms.PictureBox();
             this.lblCopyright = new System.Windows.Forms.Label();
             this.checkSenha = new System.Windows.Forms.CheckBox();
-            this.picNoticias = new System.Windows.Forms.PictureBox();
             this.pnImagens.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNoticias)).BeginInit();
             this.SuspendLayout();
@@ -121,6 +121,15 @@
             this.pnImagens.Size = new System.Drawing.Size(406, 507);
             this.pnImagens.TabIndex = 13;
             // 
+            // picNoticias
+            // 
+            this.picNoticias.Location = new System.Drawing.Point(14, 13);
+            this.picNoticias.Name = "picNoticias";
+            this.picNoticias.Size = new System.Drawing.Size(374, 475);
+            this.picNoticias.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picNoticias.TabIndex = 0;
+            this.picNoticias.TabStop = false;
+            // 
             // lblCopyright
             // 
             this.lblCopyright.AutoSize = true;
@@ -140,15 +149,6 @@
             this.checkSenha.Text = "Mostrar Senha";
             this.checkSenha.UseVisualStyleBackColor = true;
             this.checkSenha.CheckedChanged += new System.EventHandler(this.checkSenha_CheckedChanged);
-            // 
-            // picNoticias
-            // 
-            this.picNoticias.Location = new System.Drawing.Point(14, 13);
-            this.picNoticias.Name = "picNoticias";
-            this.picNoticias.Size = new System.Drawing.Size(374, 475);
-            this.picNoticias.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picNoticias.TabIndex = 0;
-            this.picNoticias.TabStop = false;
             // 
             // frmLogin
             // 
@@ -184,13 +184,13 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Label lblUser;
-        private System.Windows.Forms.TextBox txbPassword;
-        private System.Windows.Forms.TextBox txbUser;
         private System.Windows.Forms.Panel pnNoticias;
         private System.Windows.Forms.Panel pnImagens;
         private System.Windows.Forms.Label lblCopyright;
         private System.Windows.Forms.CheckBox checkSenha;
         private System.Windows.Forms.PictureBox picNoticias;
+        private System.Windows.Forms.TextBox txbPassword;
+        private System.Windows.Forms.TextBox txbUser;
     }
 }
 
