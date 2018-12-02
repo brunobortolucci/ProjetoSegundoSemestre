@@ -24,21 +24,28 @@ namespace gymtech
         frmRecepcao frmrec = new frmRecepcao();
         Consultas consulta = new Consultas();
 
+        public string user;
+        public string senha;
+        public string id;
+        public string textouser;
+        public string textosenha;
+        public string iduser;
+
         private void frmLogin_Load(object sender, EventArgs e)
         {
             conexao.conectar();                       
             
         }       
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        public void btnLogin_Click(object sender, EventArgs e)
         {
             bool encontrou = false;
 
 
             //strings de armazenamento de informacoes
-            string textouser = txbUser.Text;
-            string textosenha = txbPassword.Text;
-            string id_user;
+            textouser = txbUser.Text;
+            textosenha = txbPassword.Text;
+
 
             //string de buscar login
             string slcLogin = "SELECT * FROM usuarios WHERE login = '" + textouser + "' and senha = '" + textosenha + "'";
@@ -65,9 +72,9 @@ namespace gymtech
                     ler_teste.Close();
 
                     //armazenar id para identificacao nos proximos forms
-                    NpgsqlCommand id = new NpgsqlCommand("SELECT id_user FROM usuarios where login = '" + textouser + "'", conexao.conn);
-                    id_user = id.ExecuteScalar().ToString();
-                    MessageBox.Show("" + id_user + "");
+                    NpgsqlCommand pegandoid = new NpgsqlCommand("SELECT id_user FROM usuarios where login = '" + textouser + "'", conexao.conn);
+                    iduser = pegandoid.ExecuteScalar().ToString();
+                    MessageBox.Show("" + iduser + "");
 
                 }
 
@@ -87,9 +94,9 @@ namespace gymtech
                     ler_aluno.Close();
 
                     //armazenar id para identificacao nos proximos forms
-                    NpgsqlCommand id = new NpgsqlCommand("SELECT id_user FROM usuarios where login = '" + textouser + "'", conexao.conn);
-                    id_user = id.ExecuteScalar().ToString();
-                    MessageBox.Show("" + id_user + "");
+                    NpgsqlCommand pegandoid = new NpgsqlCommand("SELECT id_user FROM usuarios where login = '" + textouser + "'", conexao.conn);
+                    iduser = pegandoid.ExecuteScalar().ToString();
+                    MessageBox.Show("" + iduser + "");
                 }
 
                 else
@@ -108,9 +115,9 @@ namespace gymtech
                     ler_professor.Close();
 
                     //armazenar id para identificacao nos proximos forms
-                    NpgsqlCommand id = new NpgsqlCommand("SELECT id_user FROM usuarios where login = '" + textouser + "'", conexao.conn);
-                    id_user = id.ExecuteScalar().ToString();
-                    MessageBox.Show("" + id_user + "");
+                    NpgsqlCommand pegandoid = new NpgsqlCommand("SELECT id_user FROM usuarios where login = '" + textouser + "'", conexao.conn);
+                    iduser = pegandoid.ExecuteScalar().ToString();
+                    MessageBox.Show("" + iduser + "");
                 }
 
                 else
@@ -129,9 +136,9 @@ namespace gymtech
                     ler_recepcao.Close();
 
                     //armazenar id para identificacao nos proximos forms
-                    NpgsqlCommand id = new NpgsqlCommand("SELECT id_user FROM usuarios where login = '" + textouser + "'", conexao.conn);
-                    id_user = id.ExecuteScalar().ToString();
-                    MessageBox.Show("" + id_user + "");
+                    NpgsqlCommand pegandoid = new NpgsqlCommand("SELECT id_user FROM usuarios where login = '" + textouser + "'", conexao.conn);
+                    iduser = pegandoid.ExecuteScalar().ToString();
+                    MessageBox.Show("" + iduser + "");
 
                     this.Hide();
                     frmrec.Show();
@@ -151,7 +158,25 @@ namespace gymtech
                 conexao.conectar();
             }            
 
-        }        
+        }
+        
+        public string pegarid()
+        {
+            id = iduser;
+            return id;
+        }
+
+        public string pegaruser()
+        {
+            user = textouser;
+            return user;
+        }
+
+        public string pegarsenha()
+        {
+            senha = textosenha;
+            return senha;
+        }
         
         private void lblEsqueciSenha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -170,6 +195,12 @@ namespace gymtech
                 txbPassword.UseSystemPasswordChar = true;
             }
 
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            conexao.desconectar();
+            Application.Exit();
         }
     }
 }
