@@ -11,9 +11,7 @@ using System.Windows.Forms;
 namespace gymtech
 {
     public partial class frmRecepcao : Form
-    {
-        frmLogin frmlog = new frmLogin();
-
+    {        
         public frmRecepcao()
         {
             InitializeComponent();
@@ -21,6 +19,7 @@ namespace gymtech
 
         private void frmRecepcao_Load(object sender, EventArgs e)
         {
+            frmLogin frmlog = new frmLogin();
             
         }
     }
