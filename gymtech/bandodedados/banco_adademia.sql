@@ -4,6 +4,7 @@ CREATE SCHEMA public;
 
 
 -- criando tabelas de usuarios, para acesso ao sistema
+-- permissoes, admin = 0, aluno = 1, professor = 2, recepcao = 3;
 
 create table usuarios(
 	id_user serial primary key,
@@ -159,11 +160,3 @@ create table ficha_treino(
 	constraint t_triceps foreign key(t_triceps)
 	references treino_triceps(id_triceps) match simple
 );
-
-select * from aluno;
-select * from recepcao;
-select * from professor;
-select * from usuarios;
-
-select id_user from usuarios where login = 'recepcao';
-select nome from recepcao where id_user = '4';
