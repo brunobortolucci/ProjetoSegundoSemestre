@@ -40,6 +40,7 @@
             this.picNoticias = new System.Windows.Forms.PictureBox();
             this.lblCopyright = new System.Windows.Forms.Label();
             this.checkSenha = new System.Windows.Forms.CheckBox();
+            this.btnSair = new System.Windows.Forms.Button();
             this.pnImagens.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNoticias)).BeginInit();
             this.SuspendLayout();
@@ -150,11 +151,23 @@
             this.checkSenha.UseVisualStyleBackColor = true;
             this.checkSenha.CheckedChanged += new System.EventHandler(this.checkSenha_CheckedChanged);
             // 
+            // btnSair
+            // 
+            this.btnSair.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.Location = new System.Drawing.Point(697, 527);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(75, 23);
+            this.btnSair.TabIndex = 16;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(783, 561);
+            this.Controls.Add(this.btnSair);
             this.Controls.Add(this.checkSenha);
             this.Controls.Add(this.lblCopyright);
             this.Controls.Add(this.txbPassword);
@@ -191,6 +204,7 @@
         private System.Windows.Forms.PictureBox picNoticias;
         private System.Windows.Forms.TextBox txbPassword;
         private System.Windows.Forms.TextBox txbUser;
+        private System.Windows.Forms.Button btnSair;
     }
 }
 
