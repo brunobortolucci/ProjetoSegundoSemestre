@@ -18,7 +18,8 @@ create table usuarios(
 insert into usuarios (login, senha, permissao) values ('gymtech', 'gymtech', '0');
 insert into usuarios (login, senha, permissao) values ('aluno', 'aluno', '1');
 insert into usuarios (login, senha, permissao) values ('professor', 'professor', '2');
-
+--insert into usuarios (login, senha, permissao) values ('bruno', 'bruno', '1');
+--insert into professor (nome, cpf, data_nasc) values ('Bruno', '42814250809', '01/02/1992') returning id, professor);
 -- criando as tabelas
 
 create table administrador(
@@ -36,9 +37,9 @@ create table professor(
 	id_professor serial primary key,
 	nome varchar(150) not null,
 	cpf varchar(11) unique not null,
-	data_nasc date,
+	data_nasc varchar(30),
 	id_user int,
-	constraint id_user foreign key(id_user)
+	foreign key(id_user)
 	references usuarios(id_user) match simple
 );
 
@@ -148,3 +149,12 @@ create table ficha_treino(
 	constraint t_triceps foreign key(t_triceps)
 	references treino_triceps(id_triceps) match simple
 );
+
+select id_user from usuarios where login = 'gymtech';
+
+select senha from usuarios where senha = 'gymtech';
+
+select max(id_user) from usuarios;
+
+select * from usuarios;
+select * from professor;
