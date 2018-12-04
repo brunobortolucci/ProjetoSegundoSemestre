@@ -33,27 +33,56 @@ namespace gymtech
         public int contator;
         public string control;
         public string id_usuario;
+        public int permissao;
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
             conexao.conectar();                      
             
-        }       
+        }
+
+        public int id { get; set; }
+        
+        public void transferirLogin()
+        {
+            frmAdministrador frmAdm = new frmAdministrador();
+            frmAdm.usuario = txbUser.Text;
+            frmAdm.Show();
+        }        
 
         public void btnLogin_Click(object sender, EventArgs e)
-        {
-
-            frmAdministrador frmAdm = new frmAdministrador();
-
-
+        {            
             //strings de armazenamento de informacoes
             textouser = txbUser.Text;
             textosenha = txbPassword.Text;
             encontrou = false;
-
+                        
             //Metodo de Autenticacao
-            banco.autLogin(stringselect, textouser, textosenha, conexao, encontrou, contator, control);                      
+            banco.autLogin(stringselect, textouser, textosenha, conexao, encontrou, contator, control);
 
+            
+            stringselect = "SELECT id_user FROM usuarios WHERE login = '" + textouser + "'";
+
+            NpgsqlCommand pegarid = new NpgsqlCommand(stringselect, conexao.conn);
+            id = Convert.ToInt32(pegarid.ExecuteScalar());
+
+            stringselect = "SELECT permissao FROM usuarios where id_user = '" + id + "'";
+            NpgsqlCommand pegarpermissao = new NpgsqlCommand(stringselect, conexao.conn);
+            permissao = Convert.ToInt32(pegarpermissao.ExecuteScalar());
+                                
+            if(id != 0 && permissao == 0)
+            {
+                transferirLogin();
+            }
+            else if(id != 0 && permissao == 1)
+            {
+
+            }
+            else
+            {
+
+            }
+            
         }        
         
         
