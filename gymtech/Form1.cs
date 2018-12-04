@@ -23,6 +23,7 @@ namespace gymtech
         Conexao conexao = new Conexao();
         frmRecepcao frmrec = new frmRecepcao();
         Consultas consulta = new Consultas();
+        Usuario usuario = new Usuario();
 
         public string user;
         public string senha;
@@ -72,8 +73,8 @@ namespace gymtech
                     ler_teste.Close();
 
                     //armazenar id para identificacao nos proximos forms
-                    NpgsqlCommand pegandoid = new NpgsqlCommand("SELECT id_user FROM usuarios where login = '" + textouser + "'", conexao.conn);
-                    iduser = pegandoid.ExecuteScalar().ToString();
+                    NpgsqlCommand pegandoid = new NpgsqlCommand("SELECT id_user FROM usuarios where login = '" + textouser + "'", conexao.conn);                    
+                    usuario.pegarID(iduser = pegandoid.ExecuteScalar().ToString());
                     MessageBox.Show("" + iduser + "");
 
                 }
