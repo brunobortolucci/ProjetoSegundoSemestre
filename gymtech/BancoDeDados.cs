@@ -95,7 +95,6 @@ namespace gymtech
                         if (ler_professor.Read())
                         {
                             _controle = "1";
-                            System.Windows.Forms.MessageBox.Show("Funcionou - Professor");
                             ler_professor.Close();
                         }
 
