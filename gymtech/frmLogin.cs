@@ -48,7 +48,14 @@ namespace gymtech
             frmAdministrador frmAdm = new frmAdministrador();
             frmAdm.usuario = txbUser.Text;
             frmAdm.Show();
-        }        
+        }
+        
+        public void transferirLoginProfessor()
+        {
+            frmProfessor frmProf = new frmProfessor();
+            frmProf.usuario = txbUser.Text;
+            frmProf.Show();
+        }
 
         public void btnLogin_Click(object sender, EventArgs e)
         {            
@@ -76,7 +83,7 @@ namespace gymtech
             }
             else if(id != 0 && permissao == 1)
             {
-
+                transferirLoginProfessor();
             }
             else
             {
