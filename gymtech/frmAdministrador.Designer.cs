@@ -54,7 +54,7 @@
             // 
             this.lblApresentacao.AutoSize = true;
             this.lblApresentacao.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApresentacao.Location = new System.Drawing.Point(168, 45);
+            this.lblApresentacao.Location = new System.Drawing.Point(168, 41);
             this.lblApresentacao.Name = "lblApresentacao";
             this.lblApresentacao.Size = new System.Drawing.Size(60, 22);
             this.lblApresentacao.TabIndex = 0;
@@ -63,7 +63,7 @@
             // btnDesconectar
             // 
             this.btnDesconectar.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDesconectar.Location = new System.Drawing.Point(675, 22);
+            this.btnDesconectar.Location = new System.Drawing.Point(675, 28);
             this.btnDesconectar.Name = "btnDesconectar";
             this.btnDesconectar.Size = new System.Drawing.Size(97, 35);
             this.btnDesconectar.TabIndex = 17;
@@ -185,7 +185,7 @@
             this.panel1.Controls.Add(this.calendario);
             this.panel1.Controls.Add(this.lblLoginOk);
             this.panel1.Controls.Add(this.btnVerificar);
-            this.panel1.Location = new System.Drawing.Point(12, 70);
+            this.panel1.Location = new System.Drawing.Point(12, 66);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(760, 457);
             this.panel1.TabIndex = 31;
@@ -225,7 +225,7 @@
             // 
             this.lblUserLogado.AutoSize = true;
             this.lblUserLogado.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserLogado.Location = new System.Drawing.Point(12, 45);
+            this.lblUserLogado.Location = new System.Drawing.Point(12, 41);
             this.lblUserLogado.Name = "lblUserLogado";
             this.lblUserLogado.Size = new System.Drawing.Size(160, 22);
             this.lblUserLogado.TabIndex = 32;
