@@ -4,7 +4,7 @@ CREATE SCHEMA public;
 
 
 -- criando tabelas de usuarios, para acesso ao sistema
--- permissoes, admin = 0, aluno = 1, professor = 2, recepcao = 3;
+-- permissoes, admin = 0, aluno = 1, professor = 2;
 
 create table usuarios(
 	id_user serial primary key,
@@ -18,7 +18,6 @@ create table usuarios(
 insert into usuarios (login, senha, permissao) values ('gymtech', 'gymtech', '0');
 insert into usuarios (login, senha, permissao) values ('aluno', 'aluno', '1');
 insert into usuarios (login, senha, permissao) values ('professor', 'professor', '2');
-insert into usuarios (login, senha, permissao) values ('recepcao', 'recepcao', '3');
 
 -- criando as tabelas
 
@@ -32,17 +31,6 @@ create table administrador(
 
 insert into administrador(nome, id_user) values('Administrador', '1');
 
-create table recepcao(
-	id_recepcao serial primary key,
-	nome varchar(150) not null,
-	cpf varchar(11) unique not null,
-	data_nasc date,
-	id_user int,
-	constraint id_user foreign key(id_user)
-	references usuarios(id_user) match simple
-);
-
-insert into recepcao(nome, cpf, data_nasc, id_user) values('Recepção', '42014050090', '01/01/1990', '4');
 
 create table professor(
 	id_professor serial primary key,
@@ -68,15 +56,15 @@ create table aluno(
 	bairro varchar(50) not null,
 	data_nasc date,
 	celular varchar(15),
-	cad_recep int,
-	constraint cad_recep foreign key(cad_recep)
-	references recepcao(id_recepcao) match simple,
+	id_professor int,
+	constraint id_professor foreign key(id_professor)
+	references professor(id_professor) match simple,
 	id_user int,
 	constraint id_user foreign key(id_user)
 	references usuarios(id_user) match simple
 );
 
-insert into aluno(nome, cpf, rg, endereco_rua, endereco_num, endereco_comp, cep, bairro, data_nasc, celular, cad_recep, id_user)
+insert into aluno(nome, cpf, rg, endereco_rua, endereco_num, endereco_comp, cep, bairro, data_nasc, celular, id_professor, id_user)
 values ('Aluno', '42010050809', '483002220', 'Avenida Sao Jose dos Campos', '3175', '', '13040735', 'Pq Sao Martinho', '01/02/1992', '19995054631', '1', '2');
 
 create table treino_perna(
