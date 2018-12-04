@@ -14,37 +14,66 @@ namespace gymtech
 {
     public partial class frmAdministrador : Form
     {
+
         public frmAdministrador()
         {
             InitializeComponent();
+
         }
-        
+
         Usuario user = new Usuario();
         BancoDeDados banco = new BancoDeDados();
         Conexao conexao = new Conexao();
 
-        public string id_usuario;
+        public int id;
+        public string nome;
+        public string cpf;
+        public string data;
+        public string login;
+        public string senha;
+        public int permissao;
+       
+
         public string max_id;
         public int id_somado;
-        public string nome_usuario;
         public string select;
-        public string login;
-               
+        public string insert;
+        public bool encontrou;
+        public bool disponivel = false;
+        public string comparacao;
+
+
+        public string usuario { get; set; }        
+            
 
         private void frmAdministrador_Load(object sender, EventArgs e)
         {
-            frmLogin frmlog = new frmLogin();
+            if (!this.usuario.Equals(""))
+            {
+                lblApresentacao.Text = this.usuario;
+            }
 
+            if (txbLogin.Text.Equals(""))
+            {
+                btnVerificar.Enabled = false;
+            }
+
+            frmLogin frmlog = new frmLogin();
             conexao.conectar();
 
-            banco.pegarMaiorID(select, max_id, conexao);
+            calendario.Visible = false;
+        }
 
-            //id_somado = Convert.ToInt32(max_id) + 1;
-
-            //txbIdUser.Text = id_somado.ToString();
-
-            txbIdUser.Text = max_id;
-
+        public void verificarMudanca()
+        {
+            if (!txbNome.Text.Equals("") && !txbCPF.Text.Equals("") && !txbData.Text.Equals("") && !txbLogin.Text.Equals("") && !txbSenha.Text.Equals("") && lblLoginOk.Visible == true)
+            {
+                btnCadastrar.Enabled = true;
+            }
+            else
+            {
+                btnCadastrar.Enabled = false;
+            }
         }
 
         private void btnDesconectar_Click(object sender, EventArgs e)
@@ -54,12 +83,164 @@ namespace gymtech
 
         private void btnVerificar_Click(object sender, EventArgs e)
         {
+            login = txbLogin.Text;
 
+            encontrou = false;
+
+            select = "SELECT senha FROM usuarios where senha = '" + login + "'";
+
+            NpgsqlCommand verificarlogin = new NpgsqlCommand(select, conexao.conn);
+            comparacao = Convert.ToString(verificarlogin.ExecuteScalar());
+            
+            if (comparacao == login)
+            {
+                disponivel = false;
+                lblLoginOk.Visible = false;
+                MessageBox.Show("Usuario ja existe!");
+                
+            }
+            else
+            {
+                disponivel = true;
+                lblLoginOk.Visible = true;
+                MessageBox.Show("Usuario disponivel!");
+            }
+
+            verificarMudanca();
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
+            nome = txbNome.Text;
+            cpf = txbCPF.Text;
+            data = txbData.Text;
+            login = txbLogin.Text;
+            senha = txbSenha.Text;
 
+            banco.cadastrarProfessor(select, insert, nome, cpf, data, login, senha, permissao, id, conexao);
+
+            conexao.desconectar();
+            conexao.conectar();
+
+        }
+
+        private void txbLogin_TextChanged(object sender, EventArgs e)
+        {            
+
+            if (txbLogin.Text.Equals(""))
+            {
+                btnVerificar.Enabled = false;
+                lblLoginOk.Visible = false;
+                btnCadastrar.Enabled = false;
+            }
+            else
+            {
+                btnVerificar.Enabled = true;
+            }
+
+            verificarMudanca();
+        }
+
+        private void lblLoginOk_TextChanged(object sender, EventArgs e)
+        {
+            if (lblLoginOk.Visible == false)
+            {
+                btnVerificar.Enabled = false;
+                lblLoginOk.Visible = false;
+                btnCadastrar.Enabled = false;
+            }            
+
+            verificarMudanca();
+        }
+
+        private void txbNome_TextChanged(object sender, EventArgs e)
+        {
+            if (txbNome.Text.Equals(""))
+            {                
+                btnCadastrar.Enabled = false;
+            }
+            else
+            {
+                btnCadastrar.Enabled = true;
+            }
+
+            verificarMudanca();
+        }
+
+        private void txbCPF_TextChanged(object sender, EventArgs e)
+        {
+            if (txbCPF.Text.Equals(""))
+            {
+                btnCadastrar.Enabled = false; ;
+            }
+            else
+            {
+                btnCadastrar.Enabled = true;
+            }
+
+            verificarMudanca();
+        }
+
+        private void txbData_TextChanged(object sender, EventArgs e)
+        {
+            if (txbData.Text.Equals(""))
+            {
+                btnCadastrar.Enabled = false;
+            }
+            else
+            {
+                btnCadastrar.Enabled = true;
+            }
+
+            verificarMudanca();
+        }
+
+        private void txbSenha_TextChanged(object sender, EventArgs e)
+        {
+            if (txbSenha.Text.Equals(""))
+            {
+                btnCadastrar.Enabled = false;
+            }
+            else
+            {
+                btnCadastrar.Enabled = true;
+            }
+
+            verificarMudanca();
+        }
+
+        private void calendario_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            txbData.Text = calendario.SelectionStart.Day.ToString() + "/" + calendario.SelectionStart.Month.ToString() + "/" + calendario.SelectionStart.Year.ToString();
+        }
+
+        private void frmAdministrador_MouseClick(object sender, MouseEventArgs e)
+        {
+            if(calendario.Visible == true)
+            {
+                calendario.Visible = false;
+            }
+            else
+            {
+                calendario.Visible = true;
+            }
+        }
+
+        private void txbData_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (calendario.Visible == true)
+            {
+                calendario.Visible = false;
+            }
+            else
+            {
+                calendario.Visible = true;
+            }
+        }
+
+        private void panel1_MouseClick(object sender, MouseEventArgs e)
+        {
+            calendario.Visible = false;
         }
     }
 }
