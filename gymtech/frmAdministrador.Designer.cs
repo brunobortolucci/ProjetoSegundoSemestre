@@ -34,19 +34,19 @@
             this.txbNome = new System.Windows.Forms.TextBox();
             this.txbCPF = new System.Windows.Forms.TextBox();
             this.txbData = new System.Windows.Forms.TextBox();
-            this.txbIdUser = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.lblCpf = new System.Windows.Forms.Label();
             this.lblData = new System.Windows.Forms.Label();
-            this.lblIdUser = new System.Windows.Forms.Label();
             this.txbLogin = new System.Windows.Forms.TextBox();
             this.txbSenha = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
             this.lblSenha = new System.Windows.Forms.Label();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnVerificar = new System.Windows.Forms.Button();
+            this.calendario = new System.Windows.Forms.MonthCalendar();
             this.lblLoginOk = new System.Windows.Forms.Label();
+            this.btnVerificar = new System.Windows.Forms.Button();
+            this.lblUserLogado = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +54,7 @@
             // 
             this.lblApresentacao.AutoSize = true;
             this.lblApresentacao.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApresentacao.Location = new System.Drawing.Point(12, 45);
+            this.lblApresentacao.Location = new System.Drawing.Point(168, 45);
             this.lblApresentacao.Name = "lblApresentacao";
             this.lblApresentacao.Size = new System.Drawing.Size(60, 22);
             this.lblApresentacao.TabIndex = 0;
@@ -78,6 +78,7 @@
             this.txbNome.Name = "txbNome";
             this.txbNome.Size = new System.Drawing.Size(279, 30);
             this.txbNome.TabIndex = 18;
+            this.txbNome.TextChanged += new System.EventHandler(this.txbNome_TextChanged);
             // 
             // txbCPF
             // 
@@ -86,6 +87,7 @@
             this.txbCPF.Name = "txbCPF";
             this.txbCPF.Size = new System.Drawing.Size(279, 30);
             this.txbCPF.TabIndex = 19;
+            this.txbCPF.TextChanged += new System.EventHandler(this.txbCPF_TextChanged);
             // 
             // txbData
             // 
@@ -94,15 +96,8 @@
             this.txbData.Name = "txbData";
             this.txbData.Size = new System.Drawing.Size(279, 30);
             this.txbData.TabIndex = 20;
-            // 
-            // txbIdUser
-            // 
-            this.txbIdUser.Enabled = false;
-            this.txbIdUser.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbIdUser.Location = new System.Drawing.Point(490, 111);
-            this.txbIdUser.Name = "txbIdUser";
-            this.txbIdUser.Size = new System.Drawing.Size(40, 30);
-            this.txbIdUser.TabIndex = 21;
+            this.txbData.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txbData_MouseClick);
+            this.txbData.TextChanged += new System.EventHandler(this.txbData_TextChanged);
             // 
             // lblNome
             // 
@@ -134,16 +129,6 @@
             this.lblData.TabIndex = 24;
             this.lblData.Text = "DATA DE NASCIMENTO";
             // 
-            // lblIdUser
-            // 
-            this.lblIdUser.AutoSize = true;
-            this.lblIdUser.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIdUser.Location = new System.Drawing.Point(500, 86);
-            this.lblIdUser.Name = "lblIdUser";
-            this.lblIdUser.Size = new System.Drawing.Size(30, 22);
-            this.lblIdUser.TabIndex = 25;
-            this.lblIdUser.Text = "ID";
-            // 
             // txbLogin
             // 
             this.txbLogin.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -151,6 +136,7 @@
             this.txbLogin.Name = "txbLogin";
             this.txbLogin.Size = new System.Drawing.Size(279, 30);
             this.txbLogin.TabIndex = 26;
+            this.txbLogin.TextChanged += new System.EventHandler(this.txbLogin_TextChanged);
             // 
             // txbSenha
             // 
@@ -159,6 +145,7 @@
             this.txbSenha.Name = "txbSenha";
             this.txbSenha.Size = new System.Drawing.Size(279, 30);
             this.txbSenha.TabIndex = 27;
+            this.txbSenha.TextChanged += new System.EventHandler(this.txbSenha_TextChanged);
             // 
             // lblLogin
             // 
@@ -195,12 +182,33 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.calendario);
             this.panel1.Controls.Add(this.lblLoginOk);
             this.panel1.Controls.Add(this.btnVerificar);
             this.panel1.Location = new System.Drawing.Point(12, 70);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(760, 457);
             this.panel1.TabIndex = 31;
+            this.panel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseClick);
+            // 
+            // calendario
+            // 
+            this.calendario.Location = new System.Drawing.Point(5, 209);
+            this.calendario.Name = "calendario";
+            this.calendario.TabIndex = 34;
+            this.calendario.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.calendario_DateChanged);
+            // 
+            // lblLoginOk
+            // 
+            this.lblLoginOk.AutoSize = true;
+            this.lblLoginOk.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoginOk.Location = new System.Drawing.Point(600, 276);
+            this.lblLoginOk.Name = "lblLoginOk";
+            this.lblLoginOk.Size = new System.Drawing.Size(67, 13);
+            this.lblLoginOk.TabIndex = 33;
+            this.lblLoginOk.Text = "Disponível";
+            this.lblLoginOk.Visible = false;
+            this.lblLoginOk.TextChanged += new System.EventHandler(this.lblLoginOk_TextChanged);
             // 
             // btnVerificar
             // 
@@ -213,32 +221,30 @@
             this.btnVerificar.UseVisualStyleBackColor = true;
             this.btnVerificar.Click += new System.EventHandler(this.btnVerificar_Click);
             // 
-            // lblLoginOk
+            // lblUserLogado
             // 
-            this.lblLoginOk.AutoSize = true;
-            this.lblLoginOk.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoginOk.Location = new System.Drawing.Point(600, 276);
-            this.lblLoginOk.Name = "lblLoginOk";
-            this.lblLoginOk.Size = new System.Drawing.Size(67, 13);
-            this.lblLoginOk.TabIndex = 33;
-            this.lblLoginOk.Text = "Disponível";
-            this.lblLoginOk.Visible = false;
+            this.lblUserLogado.AutoSize = true;
+            this.lblUserLogado.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserLogado.Location = new System.Drawing.Point(12, 45);
+            this.lblUserLogado.Name = "lblUserLogado";
+            this.lblUserLogado.Size = new System.Drawing.Size(160, 22);
+            this.lblUserLogado.TabIndex = 32;
+            this.lblUserLogado.Text = "Usuário logado:";
             // 
             // frmAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.lblUserLogado);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.txbSenha);
             this.Controls.Add(this.txbLogin);
-            this.Controls.Add(this.lblIdUser);
             this.Controls.Add(this.lblData);
             this.Controls.Add(this.lblCpf);
             this.Controls.Add(this.lblNome);
-            this.Controls.Add(this.txbIdUser);
             this.Controls.Add(this.txbData);
             this.Controls.Add(this.txbCPF);
             this.Controls.Add(this.txbNome);
@@ -266,11 +272,9 @@
         private System.Windows.Forms.TextBox txbNome;
         private System.Windows.Forms.TextBox txbCPF;
         private System.Windows.Forms.TextBox txbData;
-        private System.Windows.Forms.TextBox txbIdUser;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Label lblCpf;
         private System.Windows.Forms.Label lblData;
-        private System.Windows.Forms.Label lblIdUser;
         private System.Windows.Forms.TextBox txbLogin;
         private System.Windows.Forms.TextBox txbSenha;
         private System.Windows.Forms.Label lblLogin;
@@ -279,5 +283,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnVerificar;
         private System.Windows.Forms.Label lblLoginOk;
+        private System.Windows.Forms.Label lblUserLogado;
+        private System.Windows.Forms.MonthCalendar calendario;
     }
 }
