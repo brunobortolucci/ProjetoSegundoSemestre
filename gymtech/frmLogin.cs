@@ -57,6 +57,13 @@ namespace gymtech
             frmProf.Show();
         }
 
+        public void transferirLoginAluno()
+        {
+            frmAluno frmAlu = new frmAluno();
+            frmAlu.usuario = txbUser.Text;
+            frmAlu.Show();
+        }
+
         public void btnLogin_Click(object sender, EventArgs e)
         {            
             //strings de armazenamento de informacoes
@@ -89,7 +96,8 @@ namespace gymtech
             }
             else
             {
-
+                transferirLoginAluno();
+                this.Hide();
             }
             
         }        
