@@ -139,7 +139,8 @@ namespace gymtech
 
         private void btnCadastrarTreino_Click(object sender, EventArgs e)
         {
-
+            frmcadTreino frmtreino = new frmcadTreino();
+            frmtreino.Show();
         }
     }
 }
