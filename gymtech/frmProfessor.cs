@@ -27,6 +27,15 @@ namespace gymtech
         public string cpf;
         public string select;
         public string retorno;
+        public int save;
+
+        public void transferir()
+        {
+            frmediAluno editaraluno = new frmediAluno();
+            editaraluno.usuario = lblSave.Text;
+            editaraluno.Show();
+
+        }
 
         private void frmProfessor_Load(object sender, EventArgs e)
         {
@@ -81,7 +90,17 @@ namespace gymtech
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if(checkNome.Checked == true)
+            nome = txbBusca.Text;
+
+            select = "SELECT id_user FROM aluno WHERE nome = '" + nome + "'";
+
+            NpgsqlCommand salvador = new NpgsqlCommand(select, conexao.conn);
+            save = Convert.ToInt32(salvador.ExecuteScalar());
+
+            lblSave.Text = Convert.ToString(save);
+
+
+            if (checkNome.Checked == true)
             {
                 nome = txbBusca.Text;
 
@@ -141,6 +160,11 @@ namespace gymtech
         {
             frmcadTreino frmtreino = new frmcadTreino();
             frmtreino.Show();
+        }
+
+        private void linklblRetorno_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            transferir();
         }
     }
 }
