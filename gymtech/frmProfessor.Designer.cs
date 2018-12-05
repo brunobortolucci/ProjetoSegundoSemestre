@@ -43,6 +43,7 @@
             this.painelBusca = new System.Windows.Forms.Panel();
             this.lblResultado = new System.Windows.Forms.Label();
             this.linklblRetorno = new System.Windows.Forms.LinkLabel();
+            this.lblSave = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.painelBusca.SuspendLayout();
             this.SuspendLayout();
@@ -169,6 +170,7 @@
             // painelBusca
             // 
             this.painelBusca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.painelBusca.Controls.Add(this.lblSave);
             this.painelBusca.Controls.Add(this.lblResultado);
             this.painelBusca.Controls.Add(this.linklblRetorno);
             this.painelBusca.Location = new System.Drawing.Point(490, 226);
@@ -196,6 +198,18 @@
             this.linklblRetorno.TabIndex = 44;
             this.linklblRetorno.TabStop = true;
             this.linklblRetorno.Text = "linkLabel1";
+            this.linklblRetorno.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblRetorno_LinkClicked);
+            // 
+            // lblSave
+            // 
+            this.lblSave.AutoSize = true;
+            this.lblSave.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSave.Location = new System.Drawing.Point(116, 25);
+            this.lblSave.Name = "lblSave";
+            this.lblSave.Size = new System.Drawing.Size(60, 22);
+            this.lblSave.TabIndex = 37;
+            this.lblSave.Text = "label";
+            this.lblSave.Visible = false;
             // 
             // frmProfessor
             // 
@@ -237,5 +251,6 @@
         private System.Windows.Forms.LinkLabel linklblRetorno;
         private System.Windows.Forms.Panel painelBusca;
         private System.Windows.Forms.Label lblResultado;
+        private System.Windows.Forms.Label lblSave;
     }
 }
