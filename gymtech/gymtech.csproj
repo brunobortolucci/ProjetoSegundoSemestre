@@ -61,11 +61,23 @@
   <ItemGroup>
     <Compile Include="BancoDeDados.cs" />
     <Compile Include="Conexao.cs" />
+    <Compile Include="frmAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAluno.Designer.cs">
+      <DependentUpon>frmAluno.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmcadAluno.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmcadAluno.Designer.cs">
       <DependentUpon>frmcadAluno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmediAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmediAluno.Designer.cs">
+      <DependentUpon>frmediAluno.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -88,8 +100,14 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario.cs" />
+    <EmbeddedResource Include="frmAluno.resx">
+      <DependentUpon>frmAluno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmcadAluno.resx">
       <DependentUpon>frmcadAluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmediAluno.resx">
+      <DependentUpon>frmediAluno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
