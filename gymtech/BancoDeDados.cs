@@ -40,6 +40,14 @@ namespace gymtech
         private bool _encontrouLogin;
         private string _retorno;
 
+
+        //dados treino
+        private string _exercicio;
+        private string _nivel;
+        private double _peso;
+        private int _series;
+        private int _repeticoes;
+
         public void autLogin(string select, string loginUsuario, string senhaUsuario, Conexao conexao, bool encontrouLogin, int valorPermissao, string controle)
         {
             frmLogin frmLog = new frmLogin();
@@ -383,6 +391,192 @@ namespace gymtech
             _stringSelect = "SELECT nome FROM aluno WHERE cpf = '" + _cpfUsuario + "'";
             NpgsqlCommand buscacpf = new NpgsqlCommand(_stringSelect, conexao.conn);
             _retorno = Convert.ToString(buscacpf.ExecuteScalar());
+        }
+
+        public void cadastrarTreinoPerna(string select, string insert, string nivel, string exericio, double peso, int series, int repeticoes, Conexao conexao)
+        {
+            _stringSelect = select;
+            _stringInsert = insert;
+            _nivel = nivel;
+            _exercicio = exericio;
+            _peso = peso;
+            _series = series;
+            _repeticoes = repeticoes;
+
+            try
+            {
+                _stringInsert = "INSERT INTO treino_perna(nivel, exercicios, peso, series, repeticoes) VALUES (:nivel, :exercicios, :peso, :series, :repeticoes)";
+                NpgsqlCommand treino = new NpgsqlCommand(_stringInsert, conexao.conn);
+                treino.Parameters.Add(new NpgsqlParameter("nivel", _nivel));
+                treino.Parameters.Add(new NpgsqlParameter("exercicios", _exercicio));
+                treino.Parameters.Add(new NpgsqlParameter("peso", _peso));
+                treino.Parameters.Add(new NpgsqlParameter("series", _series));
+                treino.Parameters.Add(new NpgsqlParameter("repeticoes", _repeticoes));
+                treino.ExecuteNonQuery();
+
+                System.Windows.Forms.MessageBox.Show("Treino Cadastrado!");
+            }
+
+            catch(Exception ex)
+            {
+                throw ex;
+            }            
+
+        }
+
+        public void cadastrarTreinoOmbro(string select, string insert, string nivel, string exericio, double peso, int series, int repeticoes, Conexao conexao)
+        {
+            _stringSelect = select;
+            _stringInsert = insert;
+            _nivel = nivel;
+            _exercicio = exericio;
+            _peso = peso;
+            _series = series;
+            _repeticoes = repeticoes;
+
+            try
+            {
+                _stringInsert = "INSERT INTO treino_ombro(nivel, exercicios, peso, series, repeticoes) VALUES (:nivel, :exercicios, :peso, :series, :repeticoes)";
+                NpgsqlCommand treino = new NpgsqlCommand(_stringInsert, conexao.conn);
+                treino.Parameters.Add(new NpgsqlParameter("nivel", _nivel));
+                treino.Parameters.Add(new NpgsqlParameter("exercicios", _exercicio));
+                treino.Parameters.Add(new NpgsqlParameter("peso", _peso));
+                treino.Parameters.Add(new NpgsqlParameter("series", _series));
+                treino.Parameters.Add(new NpgsqlParameter("repeticoes", _repeticoes));
+                treino.ExecuteNonQuery();
+
+                System.Windows.Forms.MessageBox.Show("Treino Cadastrado!");
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        public void cadastrarTreinoBiceps(string select, string insert, string nivel, string exericio, double peso, int series, int repeticoes, Conexao conexao)
+        {
+            _stringSelect = select;
+            _stringInsert = insert;
+            _nivel = nivel;
+            _exercicio = exericio;
+            _peso = peso;
+            _series = series;
+            _repeticoes = repeticoes;
+
+            try
+            {
+                _stringInsert = "INSERT INTO treino_biceps(nivel, exercicios, peso, series, repeticoes) VALUES (:nivel, :exercicios, :peso, :series, :repeticoes)";
+                NpgsqlCommand treino = new NpgsqlCommand(_stringInsert, conexao.conn);
+                treino.Parameters.Add(new NpgsqlParameter("nivel", _nivel));
+                treino.Parameters.Add(new NpgsqlParameter("exercicios", _exercicio));
+                treino.Parameters.Add(new NpgsqlParameter("peso", _peso));
+                treino.Parameters.Add(new NpgsqlParameter("series", _series));
+                treino.Parameters.Add(new NpgsqlParameter("repeticoes", _repeticoes));
+                treino.ExecuteNonQuery();
+
+                System.Windows.Forms.MessageBox.Show("Treino Cadastrado!");
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        public void cadastrarTreinoCostas(string select, string insert, string nivel, string exericio, double peso, int series, int repeticoes, Conexao conexao)
+        {
+            _stringSelect = select;
+            _stringInsert = insert;
+            _nivel = nivel;
+            _exercicio = exericio;
+            _peso = peso;
+            _series = series;
+            _repeticoes = repeticoes;
+
+            try
+            {
+                _stringInsert = "INSERT INTO treino_costas(nivel, exercicios, peso, series, repeticoes) VALUES (:nivel, :exercicios, :peso, :series, :repeticoes)";
+                NpgsqlCommand treino = new NpgsqlCommand(_stringInsert, conexao.conn);
+                treino.Parameters.Add(new NpgsqlParameter("nivel", _nivel));
+                treino.Parameters.Add(new NpgsqlParameter("exercicios", _exercicio));
+                treino.Parameters.Add(new NpgsqlParameter("peso", _peso));
+                treino.Parameters.Add(new NpgsqlParameter("series", _series));
+                treino.Parameters.Add(new NpgsqlParameter("repeticoes", _repeticoes));
+                treino.ExecuteNonQuery();
+
+                System.Windows.Forms.MessageBox.Show("Treino Cadastrado!");
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        public void cadastrarTreinoPeito(string select, string insert, string nivel, string exericio, double peso, int series, int repeticoes, Conexao conexao)
+        {
+            _stringSelect = select;
+            _stringInsert = insert;
+            _nivel = nivel;
+            _exercicio = exericio;
+            _peso = peso;
+            _series = series;
+            _repeticoes = repeticoes;
+
+            try
+            {
+                _stringInsert = "INSERT INTO treino_peito(nivel, exercicios, peso, series, repeticoes) VALUES (:nivel, :exercicios, :peso, :series, :repeticoes)";
+                NpgsqlCommand treino = new NpgsqlCommand(_stringInsert, conexao.conn);
+                treino.Parameters.Add(new NpgsqlParameter("nivel", _nivel));
+                treino.Parameters.Add(new NpgsqlParameter("exercicios", _exercicio));
+                treino.Parameters.Add(new NpgsqlParameter("peso", _peso));
+                treino.Parameters.Add(new NpgsqlParameter("series", _series));
+                treino.Parameters.Add(new NpgsqlParameter("repeticoes", _repeticoes));
+                treino.ExecuteNonQuery();
+
+                System.Windows.Forms.MessageBox.Show("Treino Cadastrado!");
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        public void cadastrarTreinoTriceps(string select, string insert, string nivel, string exericio, double peso, int series, int repeticoes, Conexao conexao)
+        {
+            _stringSelect = select;
+            _stringInsert = insert;
+            _nivel = nivel;
+            _exercicio = exericio;
+            _peso = peso;
+            _series = series;
+            _repeticoes = repeticoes;
+
+            try
+            {
+                _stringInsert = "INSERT INTO treino_triceps(nivel, exercicios, peso, series, repeticoes) VALUES (:nivel, :exercicios, :peso, :series, :repeticoes)";
+                NpgsqlCommand treino = new NpgsqlCommand(_stringInsert, conexao.conn);
+                treino.Parameters.Add(new NpgsqlParameter("nivel", _nivel));
+                treino.Parameters.Add(new NpgsqlParameter("exercicios", _exercicio));
+                treino.Parameters.Add(new NpgsqlParameter("peso", _peso));
+                treino.Parameters.Add(new NpgsqlParameter("series", _series));
+                treino.Parameters.Add(new NpgsqlParameter("repeticoes", _repeticoes));
+                treino.ExecuteNonQuery();
+
+                System.Windows.Forms.MessageBox.Show("Treino Cadastrado!");
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
         }
     }
 }
