@@ -78,31 +78,50 @@ namespace gymtech
         private void btnDesconectar_Click(object sender, EventArgs e)
         {
             this.Close();
+            frmLogin frmlog = new frmLogin();
+            frmlog.Show();
         }
 
         private void btnVerificar_Click(object sender, EventArgs e)
         {
-            login = txbLogin.Text;
-
-            encontrou = false;
-
-            select = "SELECT senha FROM usuarios where senha = '" + login + "'";
-
-            NpgsqlCommand verificarlogin = new NpgsqlCommand(select, conexao.conn);
-            comparacao = Convert.ToString(verificarlogin.ExecuteScalar());
-            
-            if (comparacao == login)
+            if (btnVerificar.Text == "Verificar")
             {
-                disponivel = false;
-                lblLoginOk.Visible = false;
-                MessageBox.Show("Usuario ja existe!");
-                
+                login = txbLogin.Text;
+
+                encontrou = false;
+
+                select = "SELECT senha FROM usuarios where senha = '" + login + "'";
+
+                NpgsqlCommand verificarlogin = new NpgsqlCommand(select, conexao.conn);
+                comparacao = Convert.ToString(verificarlogin.ExecuteScalar());
+
+                if (login.Equals(""))
+                {
+                    MessageBox.Show("Digite um login");
+                }
+
+                else if (comparacao == login)
+                {
+                    disponivel = false;
+                    lblLoginOk.Visible = false;
+                    MessageBox.Show("Usuario ja existe!");
+
+                }
+                else
+                {
+                    disponivel = true;
+                    lblLoginOk.Visible = true;
+                    MessageBox.Show("Usuario disponivel!");
+                    btnVerificar.Text = "Trocar";
+                    txbLogin.Enabled = false;
+                }
             }
-            else
+
+            else if (btnVerificar.Text == "Trocar")
             {
-                disponivel = true;
-                lblLoginOk.Visible = true;
-                MessageBox.Show("Usuario disponivel!");
+                lblLoginOk.Visible = false;
+                txbLogin.Enabled = true;
+                btnVerificar.Text = "Verificar";
             }
 
             verificarMudanca();
@@ -118,9 +137,9 @@ namespace gymtech
 
             banco.cadastrarProfessor(select, insert, nome, cpf, data, login, senha, permissao, id, conexao);
 
-            conexao.desconectar();
-            conexao.conectar();
-
+            this.Close();
+            frmLogin frmlog = new frmLogin();
+            frmlog.Show();
         }
 
         private void txbLogin_TextChanged(object sender, EventArgs e)
