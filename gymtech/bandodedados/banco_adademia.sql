@@ -68,7 +68,7 @@ values ('Aluno', '42010050809', '483002220', 'Avenida Sao Jose dos Campos', '317
 create table treino_perna(
 	id_perna serial primary key,
 	nivel varchar(50) not null,
-	exercicios text not null,
+	exercicios varchar(50) not null,
 	peso double precision not null,
 	series int not null,
 	repeticoes int not null
@@ -77,7 +77,7 @@ create table treino_perna(
 create table treino_ombro(
 	id_ombro serial primary key,
 	nivel varchar(50) not null,
-	exercicios text not null,
+	exercicios varchar(50) not null,
 	peso double precision not null,
 	series int not null,
 	repeticoes int not null
@@ -86,7 +86,7 @@ create table treino_ombro(
 create table treino_biceps(
 	id_biceps serial primary key,
 	nivel varchar(50) not null,
-	exercicios text not null,
+	exercicios varchar(50) not null,
 	peso double precision not null,
 	series int not null,
 	repeticoes int not null
@@ -95,7 +95,7 @@ create table treino_biceps(
 create table treino_costas(
 	id_costas serial primary key,
 	nivel varchar(50) not null,
-	exercicios text not null,
+	exercicios varchar(50) not null,
 	peso double precision not null,
 	series int not null,
 	repeticoes int not null
@@ -104,7 +104,7 @@ create table treino_costas(
 create table treino_peito(
 	id_peito serial primary key,
 	nivel varchar(50) not null,
-	exercicios text not null,
+	exercicios varchar(50) not null,
 	peso double precision not null,
 	series int not null,
 	repeticoes int not null
@@ -113,7 +113,7 @@ create table treino_peito(
 create table treino_triceps(
 	id_triceps serial primary key,
 	nivel varchar(50) not null,
-	exercicios text not null,
+	exercicios varchar(50) not null,
 	peso double precision not null,
 	series int not null,
 	repeticoes int not null
@@ -156,3 +156,10 @@ select max(id_user) from usuarios;
 select * from usuarios;
 select * from professor;
 select * from aluno;
+
+select * from treino_perna;
+select * from treino_costas;
+select * from treino_biceps;
+select * from treino_peito;
+select * from treino_ombro;
+select * from treino_triceps;
