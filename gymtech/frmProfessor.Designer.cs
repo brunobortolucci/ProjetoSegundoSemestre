@@ -38,12 +38,11 @@
             this.lblBusca = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txbBusca = new System.Windows.Forms.TextBox();
-            this.btnEditarTreino = new System.Windows.Forms.Button();
             this.btnCadastrarTreino = new System.Windows.Forms.Button();
             this.btnCadastrarAluno = new System.Windows.Forms.Button();
-            this.linklblRetorno = new System.Windows.Forms.LinkLabel();
             this.painelBusca = new System.Windows.Forms.Panel();
             this.lblResultado = new System.Windows.Forms.Label();
+            this.linklblRetorno = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.painelBusca.SuspendLayout();
             this.SuspendLayout();
@@ -87,7 +86,6 @@
             this.panel1.Controls.Add(this.lblBusca);
             this.panel1.Controls.Add(this.btnBuscar);
             this.panel1.Controls.Add(this.txbBusca);
-            this.panel1.Controls.Add(this.btnEditarTreino);
             this.panel1.Controls.Add(this.btnCadastrarTreino);
             this.panel1.Controls.Add(this.btnCadastrarAluno);
             this.panel1.Controls.Add(this.painelBusca);
@@ -146,47 +144,27 @@
             this.txbBusca.Size = new System.Drawing.Size(244, 20);
             this.txbBusca.TabIndex = 41;
             // 
-            // btnEditarTreino
-            // 
-            this.btnEditarTreino.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarTreino.Location = new System.Drawing.Point(258, 182);
-            this.btnEditarTreino.Name = "btnEditarTreino";
-            this.btnEditarTreino.Size = new System.Drawing.Size(174, 96);
-            this.btnEditarTreino.TabIndex = 40;
-            this.btnEditarTreino.Text = "Editar Treino";
-            this.btnEditarTreino.UseVisualStyleBackColor = true;
-            // 
             // btnCadastrarTreino
             // 
             this.btnCadastrarTreino.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrarTreino.Location = new System.Drawing.Point(41, 259);
+            this.btnCadastrarTreino.Location = new System.Drawing.Point(252, 178);
             this.btnCadastrarTreino.Name = "btnCadastrarTreino";
             this.btnCadastrarTreino.Size = new System.Drawing.Size(174, 96);
             this.btnCadastrarTreino.TabIndex = 38;
-            this.btnCadastrarTreino.Text = "Cadastrar Treino";
+            this.btnCadastrarTreino.Text = "Treinos";
             this.btnCadastrarTreino.UseVisualStyleBackColor = true;
+            this.btnCadastrarTreino.Click += new System.EventHandler(this.btnCadastrarTreino_Click);
             // 
             // btnCadastrarAluno
             // 
             this.btnCadastrarAluno.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrarAluno.Location = new System.Drawing.Point(41, 101);
+            this.btnCadastrarAluno.Location = new System.Drawing.Point(29, 178);
             this.btnCadastrarAluno.Name = "btnCadastrarAluno";
             this.btnCadastrarAluno.Size = new System.Drawing.Size(174, 96);
             this.btnCadastrarAluno.TabIndex = 37;
             this.btnCadastrarAluno.Text = "Cadastrar Aluno";
             this.btnCadastrarAluno.UseVisualStyleBackColor = true;
             this.btnCadastrarAluno.Click += new System.EventHandler(this.btnCadastrarAluno_Click);
-            // 
-            // linklblRetorno
-            // 
-            this.linklblRetorno.AutoSize = true;
-            this.linklblRetorno.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linklblRetorno.Location = new System.Drawing.Point(4, 32);
-            this.linklblRetorno.Name = "linklblRetorno";
-            this.linklblRetorno.Size = new System.Drawing.Size(77, 15);
-            this.linklblRetorno.TabIndex = 44;
-            this.linklblRetorno.TabStop = true;
-            this.linklblRetorno.Text = "linkLabel1";
             // 
             // painelBusca
             // 
@@ -207,6 +185,17 @@
             this.lblResultado.Size = new System.Drawing.Size(77, 15);
             this.lblResultado.TabIndex = 45;
             this.lblResultado.Text = "Resultado:";
+            // 
+            // linklblRetorno
+            // 
+            this.linklblRetorno.AutoSize = true;
+            this.linklblRetorno.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linklblRetorno.Location = new System.Drawing.Point(4, 32);
+            this.linklblRetorno.Name = "linklblRetorno";
+            this.linklblRetorno.Size = new System.Drawing.Size(77, 15);
+            this.linklblRetorno.TabIndex = 44;
+            this.linklblRetorno.TabStop = true;
+            this.linklblRetorno.Text = "linkLabel1";
             // 
             // frmProfessor
             // 
@@ -240,7 +229,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnCadastrarAluno;
         private System.Windows.Forms.Button btnCadastrarTreino;
-        private System.Windows.Forms.Button btnEditarTreino;
         private System.Windows.Forms.TextBox txbBusca;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label lblBusca;
