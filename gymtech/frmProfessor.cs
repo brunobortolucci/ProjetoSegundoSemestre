@@ -136,5 +136,10 @@ namespace gymtech
                 MessageBox.Show("Seleciona o tipo de busca (Nome ou Cpf)");
             }
         }
+
+        private void btnCadastrarTreino_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
