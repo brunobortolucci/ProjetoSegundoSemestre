@@ -80,10 +80,12 @@ namespace gymtech
             if(id != 0 && permissao == 0)
             {
                 transferirLogin();
+                this.Hide();
             }
             else if(id != 0 && permissao == 1)
             {
                 transferirLoginProfessor();
+                this.Hide();
             }
             else
             {
