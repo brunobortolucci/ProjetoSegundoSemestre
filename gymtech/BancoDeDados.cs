@@ -17,6 +17,7 @@ namespace gymtech
         //dados usuario     
 
         private int _id;
+        private int _idUsuario;
         private string _loginUsuario;
         private string _senhaUsuario;
         private string _nomeUsuario;
@@ -33,6 +34,7 @@ namespace gymtech
         //variaveis uteis
         private string _stringSelect;
         private string _stringInsert;
+        private string _stringUpdate;
         private int _valorPermissao;
         private string _controle;
         private string _comparacao;
@@ -576,6 +578,64 @@ namespace gymtech
             {
                 throw ex;
             }
+
+        }
+
+        public void atualizarAluno(string update, string nome, string cpf, string rg, string endrua, string endnum, string endcomp, string cep, string bairro, string data, string celular, string login, string senha, int id, int id_user, Conexao conexao)
+        {
+            _stringUpdate = update;
+            _nomeUsuario = nome;
+            _cpfUsuario = cpf;
+            _rg = rg;
+            _enderecoRua = endrua;
+            _enderecoNum = endnum;
+            _enderecoCom = endcomp;
+            _cep = cep;
+            _bairro = bairro;
+            _dataUsuario = data;
+            _celular = celular;
+            _loginUsuario = login;
+            _senhaUsuario = senha;
+            _id = id;
+            _idUsuario = id_user;
+
+            try
+            {
+                _stringUpdate = "UPDATE aluno SET nome = @nome, cpf = @cpf, rg = @rg, endereco_rua = @endereco_rua, endereco_num = @endereco_num, endereco_comp = @endereco_comp, cep = @cep, bairro = @bairro, data_nasc = @data_nasc, celular = @celular WHERE id_aluno = @id";
+
+                NpgsqlCommand atualizar = new NpgsqlCommand(_stringUpdate, conexao.conn);
+                atualizar.Parameters.Add(new NpgsqlParameter("@nome", _nomeUsuario));
+                atualizar.Parameters.Add(new NpgsqlParameter("@cpf", _cpfUsuario));
+                atualizar.Parameters.Add(new NpgsqlParameter("@rg", _rg));
+                atualizar.Parameters.Add(new NpgsqlParameter("@endereco_rua", _enderecoRua));
+                atualizar.Parameters.Add(new NpgsqlParameter("@endereco_num", _enderecoNum));
+                atualizar.Parameters.Add(new NpgsqlParameter("@endereco_comp", _enderecoCom));
+                atualizar.Parameters.Add(new NpgsqlParameter("@cep", _cep));
+                atualizar.Parameters.Add(new NpgsqlParameter("@bairro", _bairro));
+                atualizar.Parameters.Add(new NpgsqlParameter("@data_nasc", _dataUsuario));
+                atualizar.Parameters.Add(new NpgsqlParameter("@celular", _celular));
+                atualizar.Parameters.Add(new NpgsqlParameter("@id", _id));
+                atualizar.ExecuteNonQuery();
+
+                _stringUpdate = "UPDATE usuarios SET login = @login, senha = @senha WHERE id_user = @id_user";
+
+                NpgsqlCommand attlogin = new NpgsqlCommand(_stringUpdate, conexao.conn);
+                attlogin.Parameters.Add(new NpgsqlParameter("@login", _loginUsuario));
+                attlogin.Parameters.Add(new NpgsqlParameter("@senha", _senhaUsuario));
+                attlogin.Parameters.Add(new NpgsqlParameter("@id_user", _idUsuario));
+                attlogin.ExecuteNonQuery();
+
+
+                System.Windows.Forms.MessageBox.Show("Atualizado!");
+
+            }
+
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+
+            
 
         }
     }
