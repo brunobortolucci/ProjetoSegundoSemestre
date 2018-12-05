@@ -86,7 +86,6 @@ namespace gymtech
                     if (ler_aluno.Read())
                     {
                         _controle = "2";
-                        System.Windows.Forms.MessageBox.Show("Funcionou - Aluno");
                         ler_aluno.Close();
                     }
 
