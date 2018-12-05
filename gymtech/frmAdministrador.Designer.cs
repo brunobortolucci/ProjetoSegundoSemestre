@@ -145,6 +145,7 @@
             this.txbSenha.Name = "txbSenha";
             this.txbSenha.Size = new System.Drawing.Size(279, 30);
             this.txbSenha.TabIndex = 27;
+            this.txbSenha.UseSystemPasswordChar = true;
             this.txbSenha.TextChanged += new System.EventHandler(this.txbSenha_TextChanged);
             // 
             // lblLogin
