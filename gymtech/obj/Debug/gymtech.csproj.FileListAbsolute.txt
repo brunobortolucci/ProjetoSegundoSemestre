@@ -349,3 +349,4 @@ C:\Users\Windows10\Documents\GitHub\ProjetoSegundoSemestre\gymtech\obj\Debug\gym
 C:\Users\Windows10\Documents\GitHub\ProjetoSegundoSemestre\gymtech\obj\Debug\gymtech.frmRecepcao.resources
 C:\Users\bbort\Documents\GitHub\ProjetoSegundoSemestre\gymtech\obj\Debug\gymtech.frmAdministrador.resources
 C:\Users\bbort\Documents\GitHub\ProjetoSegundoSemestre\gymtech\obj\Debug\gymtech.frmProfessor.resources
+C:\Users\bbort\Documents\GitHub\ProjetoSegundoSemestre\gymtech\obj\Debug\gymtech.frmcadAluno.resources
