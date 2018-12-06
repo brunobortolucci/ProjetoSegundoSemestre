@@ -50,6 +50,17 @@ namespace gymtech
         private int _series;
         private int _repeticoes;
 
+        //dados fichatreino
+        private string _tipSang;
+        private double _pesoUsuario;
+        private double _alturaUsuario;
+        private int _idPerna;
+        private int _idOmbro;
+        private int _idCostas;
+        private int _idBiceps;
+        private int _idTriceps;
+        private int _idPeito;
+
         public void autLogin(string select, string loginUsuario, string senhaUsuario, Conexao conexao, bool encontrouLogin, int valorPermissao, string controle)
         {
             frmLogin frmLog = new frmLogin();
@@ -633,9 +644,51 @@ namespace gymtech
             catch(Exception ex)
             {
                 throw ex;
+            }            
+
+        }
+
+        public void cadastrarFichaTreino(string insert, Conexao conexao, string nome, int id_aluno, double peso_aluno, double altura_aluno, string sang, int idperna, int idombro, int idbiceps, int idcostas, int idpeito, int idtriceps)
+        {
+            _stringInsert = insert;
+            _nomeUsuario = nome;
+            _idUsuario = id_aluno;
+            _pesoUsuario = peso_aluno;
+            _alturaUsuario = altura_aluno;
+            _tipSang = sang;
+            _idPerna = idperna;
+            _idOmbro = idombro;
+            _idCostas = idcostas;
+            _idBiceps = idbiceps;
+            _idTriceps = idtriceps;
+            _idPeito = idpeito;
+
+            try
+            {
+                _stringInsert = "INSERT INTO ficha_treino(nome, aluno, peso, altura, tipo_sang, t_perna, t_ombro, t_biceps, t_costas, t_peito, t_triceps) VALUES(@nome, @aluno, @peso, @altura, @tipo_sang, @t_perna, @t_ombro, @t_biceps, @t_costas, @t_peito, @t_triceps)";
+
+                NpgsqlCommand inserir = new NpgsqlCommand(_stringInsert, conexao.conn);
+                inserir.Parameters.Add(new NpgsqlParameter("@nome", _nomeUsuario));
+                inserir.Parameters.Add(new NpgsqlParameter("@aluno", _idUsuario));
+                inserir.Parameters.Add(new NpgsqlParameter("@peso", _pesoUsuario));
+                inserir.Parameters.Add(new NpgsqlParameter("@altura", _alturaUsuario));
+                inserir.Parameters.Add(new NpgsqlParameter("@tipo_sang", _tipSang));
+                inserir.Parameters.Add(new NpgsqlParameter("@t_perna", _idPerna));
+                inserir.Parameters.Add(new NpgsqlParameter("@t_ombro", _idOmbro));
+                inserir.Parameters.Add(new NpgsqlParameter("@t_biceps", _idBiceps));
+                inserir.Parameters.Add(new NpgsqlParameter("@t_costas", _idCostas));
+                inserir.Parameters.Add(new NpgsqlParameter("@t_peito", _idPeito));
+                inserir.Parameters.Add(new NpgsqlParameter("@t_triceps", _idTriceps));
+                inserir.ExecuteNonQuery();
+
+                System.Windows.Forms.MessageBox.Show("Ficha Cadastrada!");
+
             }
 
-            
+            catch(Exception ex)
+            {
+                throw ex;
+            }
 
         }
     }
