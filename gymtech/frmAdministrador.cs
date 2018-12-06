@@ -260,5 +260,17 @@ namespace gymtech
         {
             calendario.Visible = false;
         }
+
+        private void checkCalendario_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkCalendario.Checked == true)
+            {
+                calendario.Visible = true;
+            }
+            else
+            {
+                calendario.Visible = false;
+            }
+        }
     }
 }
