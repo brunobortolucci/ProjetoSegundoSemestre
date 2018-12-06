@@ -53,16 +53,11 @@
             this.lblLogin = new System.Windows.Forms.Label();
             this.txbSenha = new System.Windows.Forms.TextBox();
             this.lblSenha = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.picboxImagemUser = new System.Windows.Forms.PictureBox();
-            this.btnProcurar = new System.Windows.Forms.Button();
-            this.btnSalvarFoto = new System.Windows.Forms.Button();
             this.btnVerificar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.calendario = new System.Windows.Forms.MonthCalendar();
             this.lblLoginOk = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picboxImagemUser)).BeginInit();
+            this.checkCalendario = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // lblNome
@@ -293,45 +288,6 @@
             this.lblSenha.TabIndex = 46;
             this.lblSenha.Text = "SENHA";
             // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.picboxImagemUser);
-            this.panel1.Location = new System.Drawing.Point(578, 26);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(187, 207);
-            this.panel1.TabIndex = 47;
-            // 
-            // picboxImagemUser
-            // 
-            this.picboxImagemUser.Location = new System.Drawing.Point(2, 4);
-            this.picboxImagemUser.Name = "picboxImagemUser";
-            this.picboxImagemUser.Size = new System.Drawing.Size(179, 199);
-            this.picboxImagemUser.TabIndex = 0;
-            this.picboxImagemUser.TabStop = false;
-            // 
-            // btnProcurar
-            // 
-            this.btnProcurar.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProcurar.Location = new System.Drawing.Point(575, 239);
-            this.btnProcurar.Name = "btnProcurar";
-            this.btnProcurar.Size = new System.Drawing.Size(75, 35);
-            this.btnProcurar.TabIndex = 48;
-            this.btnProcurar.Text = "Procurar";
-            this.btnProcurar.UseVisualStyleBackColor = true;
-            this.btnProcurar.Click += new System.EventHandler(this.btnProcurar_Click);
-            // 
-            // btnSalvarFoto
-            // 
-            this.btnSalvarFoto.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvarFoto.Location = new System.Drawing.Point(690, 239);
-            this.btnSalvarFoto.Name = "btnSalvarFoto";
-            this.btnSalvarFoto.Size = new System.Drawing.Size(75, 35);
-            this.btnSalvarFoto.TabIndex = 49;
-            this.btnSalvarFoto.Text = "Salvar";
-            this.btnSalvarFoto.UseVisualStyleBackColor = true;
-            this.btnSalvarFoto.Click += new System.EventHandler(this.btnSalvarFoto_Click);
-            // 
             // btnVerificar
             // 
             this.btnVerificar.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -356,10 +312,11 @@
             // 
             // calendario
             // 
-            this.calendario.Location = new System.Drawing.Point(437, 290);
+            this.calendario.Location = new System.Drawing.Point(450, 256);
             this.calendario.Name = "calendario";
             this.calendario.TabIndex = 52;
             this.calendario.Visible = false;
+            this.calendario.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.calendario_DateChanged);
             // 
             // lblLoginOk
             // 
@@ -372,18 +329,27 @@
             this.lblLoginOk.Text = "Disponível";
             this.lblLoginOk.Visible = false;
             // 
+            // checkCalendario
+            // 
+            this.checkCalendario.AutoSize = true;
+            this.checkCalendario.Location = new System.Drawing.Point(431, 430);
+            this.checkCalendario.Name = "checkCalendario";
+            this.checkCalendario.Size = new System.Drawing.Size(95, 17);
+            this.checkCalendario.TabIndex = 54;
+            this.checkCalendario.Text = "Ver Calendário";
+            this.checkCalendario.UseVisualStyleBackColor = true;
+            this.checkCalendario.CheckedChanged += new System.EventHandler(this.checkCalendario_CheckedChanged);
+            // 
             // frmcadAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.checkCalendario);
             this.Controls.Add(this.lblLoginOk);
             this.Controls.Add(this.calendario);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.btnVerificar);
-            this.Controls.Add(this.btnSalvarFoto);
-            this.Controls.Add(this.btnProcurar);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.txbSenha);
             this.Controls.Add(this.lblLogin);
@@ -414,8 +380,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GYM TECH - Cadastro de Aluno";
             this.Load += new System.EventHandler(this.frmcadAluno_Load);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picboxImagemUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -447,13 +411,10 @@
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.TextBox txbSenha;
         private System.Windows.Forms.Label lblSenha;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox picboxImagemUser;
-        private System.Windows.Forms.Button btnProcurar;
-        private System.Windows.Forms.Button btnSalvarFoto;
         private System.Windows.Forms.Button btnVerificar;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.MonthCalendar calendario;
         private System.Windows.Forms.Label lblLoginOk;
+        private System.Windows.Forms.CheckBox checkCalendario;
     }
 }
