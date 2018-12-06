@@ -66,27 +66,8 @@ namespace gymtech
 
         private void checkNome_CheckedChanged(object sender, EventArgs e)
         {
-            if(checkNome.Checked == true)
-            {
-                checkCpf.Enabled = false;
-            }
-            else
-            {
-                checkCpf.Enabled = true;
-            }
-        }
-
-        private void checkCpf_CheckedChanged(object sender, EventArgs e)
-        {
-            if(checkCpf.Checked == true)
-            {
-                checkNome.Enabled = false;
-            }
-            else
-            {
-                checkNome.Enabled = true;
-            }
-        }
+            
+        }        
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -125,30 +106,6 @@ namespace gymtech
                     painelBusca.Visible = true;
                 }
                                 
-            }
-            else if(checkCpf.Checked == true)
-            {
-                cpf = txbBusca.Text;
-
-                select = "SELECT nome FROM aluno WHERE cpf = '" + cpf + "'";
-                NpgsqlCommand buscacpf = new NpgsqlCommand(select, conexao.conn);
-                retorno = Convert.ToString(buscacpf.ExecuteScalar());
-
-                if (retorno.Equals(""))
-                {
-                    MessageBox.Show("Nome não encontrado");
-                    lblResultado.Visible = false;
-                    linklblRetorno.Visible = false;
-                    painelBusca.Visible = false;
-                }
-
-                else
-                {
-                    linklblRetorno.Text = retorno;
-                    lblResultado.Visible = true;
-                    linklblRetorno.Visible = true;
-                    painelBusca.Visible = true;
-                }
             }
             else
             {
