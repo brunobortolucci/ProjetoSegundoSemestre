@@ -58,8 +58,6 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCriarFicha = new System.Windows.Forms.Button();
-            this.btnVerTreino = new System.Windows.Forms.Button();
-            this.lblVerTreinos = new System.Windows.Forms.Label();
             this.lblSave = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -314,8 +312,6 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.btnCriarFicha);
-            this.panel1.Controls.Add(this.btnVerTreino);
-            this.panel1.Controls.Add(this.lblVerTreinos);
             this.panel1.Location = new System.Drawing.Point(435, 351);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(286, 198);
@@ -324,33 +320,13 @@
             // btnCriarFicha
             // 
             this.btnCriarFicha.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCriarFicha.Location = new System.Drawing.Point(149, 131);
+            this.btnCriarFicha.Location = new System.Drawing.Point(58, 57);
             this.btnCriarFicha.Name = "btnCriarFicha";
-            this.btnCriarFicha.Size = new System.Drawing.Size(117, 52);
+            this.btnCriarFicha.Size = new System.Drawing.Size(161, 79);
             this.btnCriarFicha.TabIndex = 40;
             this.btnCriarFicha.Text = "Criar Ficha";
             this.btnCriarFicha.UseVisualStyleBackColor = true;
             this.btnCriarFicha.Click += new System.EventHandler(this.btnCriarFicha_Click);
-            // 
-            // btnVerTreino
-            // 
-            this.btnVerTreino.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerTreino.Location = new System.Drawing.Point(16, 131);
-            this.btnVerTreino.Name = "btnVerTreino";
-            this.btnVerTreino.Size = new System.Drawing.Size(117, 52);
-            this.btnVerTreino.TabIndex = 39;
-            this.btnVerTreino.Text = "Treinos";
-            this.btnVerTreino.UseVisualStyleBackColor = true;
-            // 
-            // lblVerTreinos
-            // 
-            this.lblVerTreinos.AutoSize = true;
-            this.lblVerTreinos.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVerTreinos.Location = new System.Drawing.Point(13, 15);
-            this.lblVerTreinos.Name = "lblVerTreinos";
-            this.lblVerTreinos.Size = new System.Drawing.Size(56, 15);
-            this.lblVerTreinos.TabIndex = 39;
-            this.lblVerTreinos.Text = "Treinos";
             // 
             // lblSave
             // 
@@ -404,7 +380,6 @@
             this.Text = "GYM TECH - Editar Aluno";
             this.Load += new System.EventHandler(this.frmediAluno_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -440,9 +415,7 @@
         private System.Windows.Forms.CheckBox checkCalendario;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblVerTreinos;
         private System.Windows.Forms.Button btnCriarFicha;
-        private System.Windows.Forms.Button btnVerTreino;
         private System.Windows.Forms.Label lblSave;
     }
 }
