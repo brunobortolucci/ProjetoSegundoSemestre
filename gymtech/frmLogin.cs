@@ -21,7 +21,6 @@ namespace gymtech
         }
 
         Conexao conexao = new Conexao();
-        Usuario usuario = new Usuario();
         BancoDeDados banco = new BancoDeDados();
                
         
