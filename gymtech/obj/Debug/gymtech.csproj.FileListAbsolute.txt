@@ -354,4 +354,3 @@ C:\Users\bbort\Documents\GitHub\ProjetoSegundoSemestre\gymtech\obj\Debug\gymtech
 C:\Users\bbort\Documents\GitHub\ProjetoSegundoSemestre\gymtech\obj\Debug\gymtech.frmediAluno.resources
 C:\Users\bbort\Documents\GitHub\ProjetoSegundoSemestre\gymtech\obj\Debug\gymtech.frmcadTreino.resources
 C:\Users\bbort\Documents\GitHub\ProjetoSegundoSemestre\gymtech\obj\Debug\gymtech.frmcriarFicha.resources
-C:\Users\bbort\Documents\GitHub\ProjetoSegundoSemestre\gymtech\obj\Debug\gymtech.Treinos.resources
