@@ -330,6 +330,7 @@
             this.btnCriarFicha.TabIndex = 40;
             this.btnCriarFicha.Text = "Criar Ficha";
             this.btnCriarFicha.UseVisualStyleBackColor = true;
+            this.btnCriarFicha.Click += new System.EventHandler(this.btnCriarFicha_Click);
             // 
             // btnVerTreino
             // 
@@ -347,9 +348,9 @@
             this.lblVerTreinos.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVerTreinos.Location = new System.Drawing.Point(13, 15);
             this.lblVerTreinos.Name = "lblVerTreinos";
-            this.lblVerTreinos.Size = new System.Drawing.Size(42, 15);
+            this.lblVerTreinos.Size = new System.Drawing.Size(56, 15);
             this.lblVerTreinos.TabIndex = 39;
-            this.lblVerTreinos.Text = "label";
+            this.lblVerTreinos.Text = "Treinos";
             // 
             // lblSave
             // 
