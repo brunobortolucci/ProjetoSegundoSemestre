@@ -188,5 +188,22 @@ namespace gymtech
         {
             verificar();            
         }
+
+        private void checkCalendario_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkCalendario.Checked == true)
+            {
+                calendario.Visible = true;
+            }
+            else
+            {
+                calendario.Visible = false;
+            }
+        }
+
+        private void calendario_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            txbData.Text = calendario.SelectionStart.Day.ToString() + "/" + calendario.SelectionStart.Month.ToString() + "/" + calendario.SelectionStart.Year.ToString();
+        }
     }
 }
