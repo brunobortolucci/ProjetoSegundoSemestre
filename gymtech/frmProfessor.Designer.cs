@@ -33,7 +33,6 @@
             this.lblApresentacao = new System.Windows.Forms.Label();
             this.btnDesconectar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.checkCpf = new System.Windows.Forms.CheckBox();
             this.checkNome = new System.Windows.Forms.CheckBox();
             this.lblBusca = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -41,9 +40,9 @@
             this.btnCadastrarTreino = new System.Windows.Forms.Button();
             this.btnCadastrarAluno = new System.Windows.Forms.Button();
             this.painelBusca = new System.Windows.Forms.Panel();
+            this.lblSave = new System.Windows.Forms.Label();
             this.lblResultado = new System.Windows.Forms.Label();
             this.linklblRetorno = new System.Windows.Forms.LinkLabel();
-            this.lblSave = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.painelBusca.SuspendLayout();
             this.SuspendLayout();
@@ -82,7 +81,6 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.checkCpf);
             this.panel1.Controls.Add(this.checkNome);
             this.panel1.Controls.Add(this.lblBusca);
             this.panel1.Controls.Add(this.btnBuscar);
@@ -94,17 +92,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(760, 457);
             this.panel1.TabIndex = 36;
-            // 
-            // checkCpf
-            // 
-            this.checkCpf.AutoSize = true;
-            this.checkCpf.Location = new System.Drawing.Point(554, 166);
-            this.checkCpf.Name = "checkCpf";
-            this.checkCpf.Size = new System.Drawing.Size(46, 17);
-            this.checkCpf.TabIndex = 43;
-            this.checkCpf.Text = "CPF";
-            this.checkCpf.UseVisualStyleBackColor = true;
-            this.checkCpf.CheckedChanged += new System.EventHandler(this.checkCpf_CheckedChanged);
             // 
             // checkNome
             // 
@@ -178,6 +165,17 @@
             this.painelBusca.Size = new System.Drawing.Size(200, 74);
             this.painelBusca.TabIndex = 45;
             // 
+            // lblSave
+            // 
+            this.lblSave.AutoSize = true;
+            this.lblSave.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSave.Location = new System.Drawing.Point(116, 25);
+            this.lblSave.Name = "lblSave";
+            this.lblSave.Size = new System.Drawing.Size(60, 22);
+            this.lblSave.TabIndex = 37;
+            this.lblSave.Text = "label";
+            this.lblSave.Visible = false;
+            // 
             // lblResultado
             // 
             this.lblResultado.AutoSize = true;
@@ -199,17 +197,6 @@
             this.linklblRetorno.TabStop = true;
             this.linklblRetorno.Text = "linkLabel1";
             this.linklblRetorno.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblRetorno_LinkClicked);
-            // 
-            // lblSave
-            // 
-            this.lblSave.AutoSize = true;
-            this.lblSave.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSave.Location = new System.Drawing.Point(116, 25);
-            this.lblSave.Name = "lblSave";
-            this.lblSave.Size = new System.Drawing.Size(60, 22);
-            this.lblSave.TabIndex = 37;
-            this.lblSave.Text = "label";
-            this.lblSave.Visible = false;
             // 
             // frmProfessor
             // 
@@ -246,7 +233,6 @@
         private System.Windows.Forms.TextBox txbBusca;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label lblBusca;
-        private System.Windows.Forms.CheckBox checkCpf;
         private System.Windows.Forms.CheckBox checkNome;
         private System.Windows.Forms.LinkLabel linklblRetorno;
         private System.Windows.Forms.Panel painelBusca;
