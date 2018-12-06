@@ -40,6 +40,33 @@ namespace gymtech
         
         public string select;
 
+        public void preencherComboTreino()
+        {
+            //consulta
+            select = "SELECT nome FROM ficha_treino";
+            NpgsqlCommand treinos = new NpgsqlCommand(select, conexao.conn);
+            NpgsqlDataReader ler;
+
+            try
+            {
+                ler = treinos.ExecuteReader();
+
+                while (ler.Read())
+                {
+                    string nomes = ler.GetString(ler.GetOrdinal("nome"));
+                    comboTreinos.Items.Add(nomes);
+                }
+
+                ler.Close();
+
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         private void frmAluno_Load(object sender, EventArgs e)
         {
             conexao.conectar();
@@ -49,6 +76,7 @@ namespace gymtech
                 lblApresentacao.Text = this.usuario;
             }
 
+            preencherComboTreino();
 
             //consultas
             select = "SELECT id_user FROM usuarios WHERE login = '" + usuario + "'";
@@ -113,11 +141,6 @@ namespace gymtech
             this.Close();
             frmLogin frmlog = new frmLogin();
             frmlog.Show();
-        }
-
-        private void btnTreinos_Click(object sender, EventArgs e)
-        {
-
-        }
+        }        
     }
 }
