@@ -346,7 +346,6 @@ C:\Users\Windows10\Documents\GitHub\ProjetoSegundoSemestre\gymtech\obj\Debug\gym
 C:\Users\Windows10\Documents\GitHub\ProjetoSegundoSemestre\gymtech\obj\Debug\gymtech.csproj.CopyComplete
 C:\Users\Windows10\Documents\GitHub\ProjetoSegundoSemestre\gymtech\obj\Debug\gymtech.exe
 C:\Users\Windows10\Documents\GitHub\ProjetoSegundoSemestre\gymtech\obj\Debug\gymtech.pdb
-C:\Users\Windows10\Documents\GitHub\ProjetoSegundoSemestre\gymtech\obj\Debug\gymtech.frmRecepcao.resources
 C:\Users\bbort\Documents\GitHub\ProjetoSegundoSemestre\gymtech\obj\Debug\gymtech.frmAdministrador.resources
 C:\Users\bbort\Documents\GitHub\ProjetoSegundoSemestre\gymtech\obj\Debug\gymtech.frmProfessor.resources
 C:\Users\bbort\Documents\GitHub\ProjetoSegundoSemestre\gymtech\obj\Debug\gymtech.frmcadAluno.resources
@@ -354,3 +353,10 @@ C:\Users\bbort\Documents\GitHub\ProjetoSegundoSemestre\gymtech\obj\Debug\gymtech
 C:\Users\bbort\Documents\GitHub\ProjetoSegundoSemestre\gymtech\obj\Debug\gymtech.frmediAluno.resources
 C:\Users\bbort\Documents\GitHub\ProjetoSegundoSemestre\gymtech\obj\Debug\gymtech.frmcadTreino.resources
 C:\Users\bbort\Documents\GitHub\ProjetoSegundoSemestre\gymtech\obj\Debug\gymtech.frmcriarFicha.resources
+C:\Users\Windows10\Documents\GitHub\ProjetoSegundoSemestre\gymtech\obj\Debug\gymtech.frmAluno.resources
+C:\Users\Windows10\Documents\GitHub\ProjetoSegundoSemestre\gymtech\obj\Debug\gymtech.frmcadAluno.resources
+C:\Users\Windows10\Documents\GitHub\ProjetoSegundoSemestre\gymtech\obj\Debug\gymtech.frmcadTreino.resources
+C:\Users\Windows10\Documents\GitHub\ProjetoSegundoSemestre\gymtech\obj\Debug\gymtech.frmcriarFicha.resources
+C:\Users\Windows10\Documents\GitHub\ProjetoSegundoSemestre\gymtech\obj\Debug\gymtech.frmediAluno.resources
+C:\Users\Windows10\Documents\GitHub\ProjetoSegundoSemestre\gymtech\obj\Debug\gymtech.frmAdministrador.resources
+C:\Users\Windows10\Documents\GitHub\ProjetoSegundoSemestre\gymtech\obj\Debug\gymtech.frmProfessor.resources
