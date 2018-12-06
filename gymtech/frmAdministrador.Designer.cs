@@ -47,6 +47,7 @@
             this.lblLoginOk = new System.Windows.Forms.Label();
             this.btnVerificar = new System.Windows.Forms.Button();
             this.lblUserLogado = new System.Windows.Forms.Label();
+            this.checkCalendario = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -183,6 +184,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.checkCalendario);
             this.panel1.Controls.Add(this.calendario);
             this.panel1.Controls.Add(this.lblLoginOk);
             this.panel1.Controls.Add(this.btnVerificar);
@@ -231,6 +233,17 @@
             this.lblUserLogado.Size = new System.Drawing.Size(160, 22);
             this.lblUserLogado.TabIndex = 32;
             this.lblUserLogado.Text = "Usuário logado:";
+            // 
+            // checkCalendario
+            // 
+            this.checkCalendario.AutoSize = true;
+            this.checkCalendario.Location = new System.Drawing.Point(523, 221);
+            this.checkCalendario.Name = "checkCalendario";
+            this.checkCalendario.Size = new System.Drawing.Size(95, 17);
+            this.checkCalendario.TabIndex = 37;
+            this.checkCalendario.Text = "Ver Calendário";
+            this.checkCalendario.UseVisualStyleBackColor = true;
+            this.checkCalendario.CheckedChanged += new System.EventHandler(this.checkCalendario_CheckedChanged);
             // 
             // frmAdministrador
             // 
@@ -286,5 +299,6 @@
         private System.Windows.Forms.Label lblLoginOk;
         private System.Windows.Forms.Label lblUserLogado;
         private System.Windows.Forms.MonthCalendar calendario;
+        private System.Windows.Forms.CheckBox checkCalendario;
     }
 }
