@@ -33,6 +33,8 @@
             this.btnDesconectar = new System.Windows.Forms.Button();
             this.lblApresentacao = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblMeusTreinos = new System.Windows.Forms.Label();
+            this.comboTreinos = new System.Windows.Forms.ComboBox();
             this.lblCelularUsuario = new System.Windows.Forms.Label();
             this.lblDataUsuario = new System.Windows.Forms.Label();
             this.lblBairroUsuario = new System.Windows.Forms.Label();
@@ -54,9 +56,20 @@
             this.lblCpf = new System.Windows.Forms.Label();
             this.lblNomeUsuario = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
-            this.comboTreinos = new System.Windows.Forms.ComboBox();
-            this.lblMeusTreinos = new System.Windows.Forms.Label();
+            this.painel = new System.Windows.Forms.Panel();
+            this.lblSelecione = new System.Windows.Forms.Label();
+            this.comboResultado = new System.Windows.Forms.ComboBox();
+            this.txbNivel = new System.Windows.Forms.TextBox();
+            this.txbPeso = new System.Windows.Forms.TextBox();
+            this.txbSeries = new System.Windows.Forms.TextBox();
+            this.txbRep = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.painel.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblUserLogado
@@ -116,10 +129,30 @@
             this.panel1.Controls.Add(this.lblCpf);
             this.panel1.Controls.Add(this.lblNomeUsuario);
             this.panel1.Controls.Add(this.lblNome);
+            this.panel1.Controls.Add(this.painel);
             this.panel1.Location = new System.Drawing.Point(16, 65);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(756, 459);
             this.panel1.TabIndex = 36;
+            // 
+            // lblMeusTreinos
+            // 
+            this.lblMeusTreinos.AutoSize = true;
+            this.lblMeusTreinos.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMeusTreinos.Location = new System.Drawing.Point(484, 47);
+            this.lblMeusTreinos.Name = "lblMeusTreinos";
+            this.lblMeusTreinos.Size = new System.Drawing.Size(130, 22);
+            this.lblMeusTreinos.TabIndex = 37;
+            this.lblMeusTreinos.Text = "Meus Treinos";
+            // 
+            // comboTreinos
+            // 
+            this.comboTreinos.FormattingEnabled = true;
+            this.comboTreinos.Location = new System.Drawing.Point(488, 72);
+            this.comboTreinos.Name = "comboTreinos";
+            this.comboTreinos.Size = new System.Drawing.Size(225, 21);
+            this.comboTreinos.TabIndex = 55;
+            this.comboTreinos.SelectedIndexChanged += new System.EventHandler(this.comboTreinos_SelectedIndexChanged);
             // 
             // lblCelularUsuario
             // 
@@ -331,23 +364,119 @@
             this.lblNome.TabIndex = 37;
             this.lblNome.Text = "NOME:";
             // 
-            // comboTreinos
+            // painel
             // 
-            this.comboTreinos.FormattingEnabled = true;
-            this.comboTreinos.Location = new System.Drawing.Point(428, 58);
-            this.comboTreinos.Name = "comboTreinos";
-            this.comboTreinos.Size = new System.Drawing.Size(225, 21);
-            this.comboTreinos.TabIndex = 55;
+            this.painel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.painel.Controls.Add(this.label5);
+            this.painel.Controls.Add(this.label4);
+            this.painel.Controls.Add(this.label3);
+            this.painel.Controls.Add(this.label2);
+            this.painel.Controls.Add(this.label1);
+            this.painel.Controls.Add(this.txbRep);
+            this.painel.Controls.Add(this.txbSeries);
+            this.painel.Controls.Add(this.txbPeso);
+            this.painel.Controls.Add(this.txbNivel);
+            this.painel.Controls.Add(this.lblSelecione);
+            this.painel.Controls.Add(this.comboResultado);
+            this.painel.Location = new System.Drawing.Point(488, 116);
+            this.painel.Name = "painel";
+            this.painel.Size = new System.Drawing.Size(263, 338);
+            this.painel.TabIndex = 57;
+            this.painel.Visible = false;
             // 
-            // lblMeusTreinos
+            // lblSelecione
             // 
-            this.lblMeusTreinos.AutoSize = true;
-            this.lblMeusTreinos.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMeusTreinos.Location = new System.Drawing.Point(424, 33);
-            this.lblMeusTreinos.Name = "lblMeusTreinos";
-            this.lblMeusTreinos.Size = new System.Drawing.Size(130, 22);
-            this.lblMeusTreinos.TabIndex = 37;
-            this.lblMeusTreinos.Text = "Meus Treinos";
+            this.lblSelecione.AutoSize = true;
+            this.lblSelecione.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelecione.Location = new System.Drawing.Point(19, 12);
+            this.lblSelecione.Name = "lblSelecione";
+            this.lblSelecione.Size = new System.Drawing.Size(220, 22);
+            this.lblSelecione.TabIndex = 58;
+            this.lblSelecione.Text = "Selecione o exercício";
+            this.lblSelecione.Visible = false;
+            // 
+            // comboResultado
+            // 
+            this.comboResultado.FormattingEnabled = true;
+            this.comboResultado.Location = new System.Drawing.Point(23, 37);
+            this.comboResultado.Name = "comboResultado";
+            this.comboResultado.Size = new System.Drawing.Size(225, 21);
+            this.comboResultado.TabIndex = 56;
+            this.comboResultado.Visible = false;
+            this.comboResultado.SelectedIndexChanged += new System.EventHandler(this.comboResultado_SelectedIndexChanged);
+            // 
+            // txbNivel
+            // 
+            this.txbNivel.Location = new System.Drawing.Point(23, 119);
+            this.txbNivel.Name = "txbNivel";
+            this.txbNivel.Size = new System.Drawing.Size(174, 20);
+            this.txbNivel.TabIndex = 59;
+            // 
+            // txbPeso
+            // 
+            this.txbPeso.Location = new System.Drawing.Point(23, 187);
+            this.txbPeso.Name = "txbPeso";
+            this.txbPeso.Size = new System.Drawing.Size(89, 20);
+            this.txbPeso.TabIndex = 60;
+            // 
+            // txbSeries
+            // 
+            this.txbSeries.Location = new System.Drawing.Point(23, 251);
+            this.txbSeries.Name = "txbSeries";
+            this.txbSeries.Size = new System.Drawing.Size(57, 20);
+            this.txbSeries.TabIndex = 61;
+            // 
+            // txbRep
+            // 
+            this.txbRep.Location = new System.Drawing.Point(101, 251);
+            this.txbRep.Name = "txbRep";
+            this.txbRep.Size = new System.Drawing.Size(57, 20);
+            this.txbRep.TabIndex = 62;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(20, 103);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(33, 13);
+            this.label1.TabIndex = 63;
+            this.label1.Text = "Nível";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(20, 171);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(31, 13);
+            this.label2.TabIndex = 64;
+            this.label2.Text = "Peso";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(114, 190);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(20, 13);
+            this.label3.TabIndex = 65;
+            this.label3.Text = "Kg";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(20, 235);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 13);
+            this.label4.TabIndex = 66;
+            this.label4.Text = "Series";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(98, 235);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 13);
+            this.label5.TabIndex = 67;
+            this.label5.Text = "Repetições";
             // 
             // frmAluno
             // 
@@ -366,6 +495,8 @@
             this.Load += new System.EventHandler(this.frmAluno_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.painel.ResumeLayout(false);
+            this.painel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -400,5 +531,17 @@
         private System.Windows.Forms.Label lblEndNumUsuario;
         private System.Windows.Forms.ComboBox comboTreinos;
         private System.Windows.Forms.Label lblMeusTreinos;
+        private System.Windows.Forms.ComboBox comboResultado;
+        private System.Windows.Forms.Panel painel;
+        private System.Windows.Forms.Label lblSelecione;
+        private System.Windows.Forms.TextBox txbSeries;
+        private System.Windows.Forms.TextBox txbPeso;
+        private System.Windows.Forms.TextBox txbNivel;
+        private System.Windows.Forms.TextBox txbRep;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
