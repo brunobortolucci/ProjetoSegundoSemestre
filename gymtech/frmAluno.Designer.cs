@@ -54,7 +54,8 @@
             this.lblCpf = new System.Windows.Forms.Label();
             this.lblNomeUsuario = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
-            this.btnTreinos = new System.Windows.Forms.Button();
+            this.comboTreinos = new System.Windows.Forms.ComboBox();
+            this.lblMeusTreinos = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,6 +93,8 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lblMeusTreinos);
+            this.panel1.Controls.Add(this.comboTreinos);
             this.panel1.Controls.Add(this.lblCelularUsuario);
             this.panel1.Controls.Add(this.lblDataUsuario);
             this.panel1.Controls.Add(this.lblBairroUsuario);
@@ -113,7 +116,6 @@
             this.panel1.Controls.Add(this.lblCpf);
             this.panel1.Controls.Add(this.lblNomeUsuario);
             this.panel1.Controls.Add(this.lblNome);
-            this.panel1.Controls.Add(this.btnTreinos);
             this.panel1.Location = new System.Drawing.Point(16, 65);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(756, 459);
@@ -329,16 +331,23 @@
             this.lblNome.TabIndex = 37;
             this.lblNome.Text = "NOME:";
             // 
-            // btnTreinos
+            // comboTreinos
             // 
-            this.btnTreinos.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTreinos.Location = new System.Drawing.Point(434, 199);
-            this.btnTreinos.Name = "btnTreinos";
-            this.btnTreinos.Size = new System.Drawing.Size(185, 95);
-            this.btnTreinos.TabIndex = 37;
-            this.btnTreinos.Text = "Ver Treinos";
-            this.btnTreinos.UseVisualStyleBackColor = true;
-            this.btnTreinos.Click += new System.EventHandler(this.btnTreinos_Click);
+            this.comboTreinos.FormattingEnabled = true;
+            this.comboTreinos.Location = new System.Drawing.Point(428, 58);
+            this.comboTreinos.Name = "comboTreinos";
+            this.comboTreinos.Size = new System.Drawing.Size(225, 21);
+            this.comboTreinos.TabIndex = 55;
+            // 
+            // lblMeusTreinos
+            // 
+            this.lblMeusTreinos.AutoSize = true;
+            this.lblMeusTreinos.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMeusTreinos.Location = new System.Drawing.Point(424, 33);
+            this.lblMeusTreinos.Name = "lblMeusTreinos";
+            this.lblMeusTreinos.Size = new System.Drawing.Size(130, 22);
+            this.lblMeusTreinos.TabIndex = 37;
+            this.lblMeusTreinos.Text = "Meus Treinos";
             // 
             // frmAluno
             // 
@@ -353,7 +362,7 @@
             this.MaximizeBox = false;
             this.Name = "frmAluno";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GYM TECH - Área do Aluno";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.frmAluno_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -368,7 +377,6 @@
         private System.Windows.Forms.Button btnDesconectar;
         private System.Windows.Forms.Label lblApresentacao;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnTreinos;
         private System.Windows.Forms.Label lblRgUsuario;
         private System.Windows.Forms.Label lblRg;
         private System.Windows.Forms.Label lblCpfUsuario;
@@ -390,5 +398,7 @@
         private System.Windows.Forms.Label lblCepUsuario;
         private System.Windows.Forms.Label lblEndCompUsuario;
         private System.Windows.Forms.Label lblEndNumUsuario;
+        private System.Windows.Forms.ComboBox comboTreinos;
+        private System.Windows.Forms.Label lblMeusTreinos;
     }
 }
