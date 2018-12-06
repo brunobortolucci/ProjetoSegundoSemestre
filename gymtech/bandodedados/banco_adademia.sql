@@ -121,6 +121,7 @@ create table treino_triceps(
 
 create table ficha_treino(
 	id_ficha serial primary key,
+	nome varchar(50) not null,
 	aluno int,
 	constraint aluno foreign key(aluno)
 	references aluno(id_aluno) match simple,
@@ -163,3 +164,7 @@ select * from treino_biceps;
 select * from treino_peito;
 select * from treino_ombro;
 select * from treino_triceps;
+
+select exercicios from treino_perna;
+
+select * from ficha_treino;
