@@ -18,8 +18,6 @@ create table usuarios(
 insert into usuarios (login, senha, permissao) values ('gymtech', 'gymtech', '0');
 insert into usuarios (login, senha, permissao) values ('aluno', 'aluno', '2');
 insert into usuarios (login, senha, permissao) values ('professor', 'professor', '1');
---insert into usuarios (login, senha, permissao) values ('bruno', 'bruno', '1');
---insert into professor (nome, cpf, data_nasc) values ('Bruno', '42814250809', '01/02/1992') returning id, professor);
 -- criando as tabelas
 
 create table administrador(
@@ -147,24 +145,3 @@ create table ficha_treino(
 	constraint t_triceps foreign key(t_triceps)
 	references treino_triceps(id_triceps) match simple
 );
-
-select id_user from usuarios where login = 'gymtech';
-
-select senha from usuarios where senha = 'gymtech';
-
-select max(id_user) from usuarios;
-
-select * from usuarios;
-select * from professor;
-select * from aluno;
-
-select * from treino_perna;
-select * from treino_costas;
-select * from treino_biceps;
-select * from treino_peito;
-select * from treino_ombro;
-select * from treino_triceps;
-
-select exercicios from treino_perna;
-
-select * from ficha_treino;
