@@ -42,6 +42,13 @@ namespace gymtech
         public string insert;
         public string update;
 
+        private void transferir()
+        {
+            frmcriarFicha ficha = new frmcriarFicha();
+            ficha.usuario = nome;
+            ficha.id_aluno = id;
+            ficha.Show();
+        }
 
         private void frmediAluno_Load(object sender, EventArgs e)
         {
@@ -156,6 +163,11 @@ namespace gymtech
 
             banco.atualizarAluno(update, nome, cpf, rg, endrua, endnum, endcomp, cep, bairro, data, celular, login, senha, id, id_user, conexao);
 
+        }
+
+        private void btnCriarFicha_Click(object sender, EventArgs e)
+        {
+            transferir();
         }
     }
 }
